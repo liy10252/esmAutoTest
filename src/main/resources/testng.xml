@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="esm的测试套件">
+    <test name="这些是case">
+        <classes>
+            <class name="esm.cases.audit.platform.overview.ManageDomainTest"/>
+            <class name="esm.cases.audit.platform.overview.OnlineStateTest"/>
+            <class name="esm.cases.audit.platform.overview.RebootTest"/>
+            <class name="esm.cases.audit.platform.overview.SearchTest"/>
+            <class name="esm.cases.audit.platform.unknown.TimeRetrievalTest"/>
+            <class name="esm.cases.audit.platform.unknown.SearchTest"/>
+        </classes>
+
+    </test>
+
+    <listeners>
+        <listener class-name="esm.listener.ExtentTestNGIReporterListener"/>
+    </listeners>
+</suite>
