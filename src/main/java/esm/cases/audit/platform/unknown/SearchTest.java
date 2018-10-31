@@ -41,7 +41,7 @@ public class SearchTest extends SeleniumTestCase {
         unknownPage.getSearchBar().sendKeys(text);
         element.click();
         unknownPage.getSearchButton().click();
-        TestUtil.waitForAttrContains(By.xpath("//div[@id='tableBox1']//tbody/tr[2]/td[1]"),"style","height");
+        TestUtil.waitFortextToElement(By.id("assignPage_totalCount"),"1");
         Assertion.verifyEquals(unknownPage.getTr().findElement(locator)
                 .getText(),text,"未知终端搜索条验证"+text+"错误");
     }

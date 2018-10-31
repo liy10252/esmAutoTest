@@ -18,7 +18,7 @@ public class ManageDomainTest extends SeleniumTestCase {
         action.moveToElement(overviewPage.getGroupPath()).perform();
         overviewPage.getGroupPathSpan().click();
         action.moveToElement(overviewPage.getTbody()).perform();
-        TestUtil.waitForAttr(By.xpath("//tbody/tr[1]/td[7]"),"title","");
+        TestUtil.waitFortextToElement(By.id("assignPage_totalCount"),"0");
         Assertion.verifyEquals(overviewPage.getTbody().getText().trim().equals(""),true,"终端管理范围验证错误");
 
     }

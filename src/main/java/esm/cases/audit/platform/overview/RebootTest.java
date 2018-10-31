@@ -16,7 +16,7 @@ public class RebootTest extends SeleniumTestCase {
 
         overviewPage = new OverviewPage(driver);
         overviewPage.getNoReboot().click();
-        TestUtil.waitForTextInElement(By.xpath("//tbody/tr[1]/td[1]//span[2]"),"WIN-1AL9RFMO73O");
+        TestUtil.waitFortextToElement(By.id("assignPage_totalCount"),"2");
         Assertion.verifyEquals(overviewPage.getTr().findElement(By.xpath("./td[2]")).
                 getText(),"否","终端需要重启否验证错误");
 
@@ -25,7 +25,7 @@ public class RebootTest extends SeleniumTestCase {
     @Test(dependsOnMethods = "rebootNo",description = "终端需要重启验证为是")
     public void rebootYes(){
         overviewPage.getYesReboot().click();
-        TestUtil.waitForTextInElement(By.xpath("//tbody/tr[1]/td[1]//span[2]"),"ESMCLIEN-DC447A");
+        TestUtil.waitFortextToElement(By.id("assignPage_totalCount"),"1");
         Assertion.verifyEquals(overviewPage.getTr().findElement(By.xpath("./td[2]")).
                 getText(),"是","终端需要重启是验证错误");
     }

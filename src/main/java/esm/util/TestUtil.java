@@ -12,7 +12,9 @@ import java.util.*;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TestUtil {
@@ -160,17 +162,24 @@ public class TestUtil {
 //	}
 
 	// 智能等待元素文本改变，等待15秒，到时间没找到抛出异常，catch变动异常
-//	public static void waitForChanges(WebElement element,String oldStr) {
-//
-//		Wait<WebDriver> wait = new WebDriverWait(driver, 15);
-//		wait.until(ExpectedConditions.refreshed(new ExpectedCondition<Boolean>() {
-//			@Override
-//			public Boolean apply(WebDriver driver) {
-//				String newStr = element.getText();
-//				return !oldStr.equals(newStr);
-//			}
-//		}));
-//	}
+	public static void waitForChanges(By locator,String oldStr) {
+
+		Wait<WebDriver> wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.refreshed(new ExpectedCondition<Boolean>() {
+			@Override
+			public Boolean apply(WebDriver driver) {
+				String newStr = driver.findElement(locator).getText();
+				return !oldStr.equals(newStr);
+			}
+		}));
+	}
+
+	public static void waitFortextToElement(By locator, String text)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.refreshed(
+				ExpectedConditions.textToBePresentInElementLocated(locator,text)));
+	}
 
 
 
