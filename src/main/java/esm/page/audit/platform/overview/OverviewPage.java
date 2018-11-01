@@ -57,6 +57,9 @@ public class OverviewPage extends BasePage {
     @FindBy(xpath = "//dd[@id='searchBox']//a")
     private WebElement searchButton;
 
+    @FindBy(id = "assignPage_totalCount")
+    private WebElement count;
+
     public OverviewPage(EventFiringWebDriver driver) {
         super(driver);
     }

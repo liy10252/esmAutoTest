@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 public class SearchTest extends SeleniumTestCase {
 
     UnknownPage unknownPage;
+    String count;
 
     @Test(description = "未知终端搜索条验证")
     public void searchComputer(){
@@ -38,10 +39,13 @@ public class SearchTest extends SeleniumTestCase {
 
         unknownPage.getSearchBar().clear();
         unknownPage.getSearchButton().click();
+        count = unknownPage.getCount().getText();
+
         unknownPage.getSearchBar().sendKeys(text);
         element.click();
         unknownPage.getSearchButton().click();
-        TestUtil.waitFortextToElement(By.id("assignPage_totalCount"),"1");
+
+        TestUtil.waitForChanges(By.id("assignPage_totalCount"),count);
         Assertion.verifyEquals(unknownPage.getTr().findElement(locator)
                 .getText(),text,"未知终端搜索条验证"+text+"错误");
     }

@@ -54,6 +54,9 @@ public class UnknownPage extends BasePage {
     @FindBy(xpath = "//dd[@id='searchBox']//span[@val='MAC']")
     private WebElement mac;
 
+    @FindBy(id = "assignPage_totalCount")
+    private WebElement count;
+
     public UnknownPage(EventFiringWebDriver driver) {
         super(driver);
     }

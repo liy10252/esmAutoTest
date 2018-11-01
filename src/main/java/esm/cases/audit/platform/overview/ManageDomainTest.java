@@ -10,15 +10,18 @@ import org.testng.annotations.Test;
 
 public class ManageDomainTest extends SeleniumTestCase {
 
+    String count;
+
     @Test(description = "终端管理范围验证")
     public void ManageDomain(){
 
         OverviewPage overviewPage = new OverviewPage(driver);
+        count = overviewPage.getCount().getText();
         Actions action = new Actions(driver);
         action.moveToElement(overviewPage.getGroupPath()).perform();
         overviewPage.getGroupPathSpan().click();
         action.moveToElement(overviewPage.getTbody()).perform();
-        TestUtil.waitFortextToElement(By.id("assignPage_totalCount"),"0");
+        TestUtil.waitForChanges(By.id("assignPage_totalCount"),count);
         Assertion.verifyEquals(overviewPage.getTbody().getText().trim().equals(""),true,"终端管理范围验证错误");
 
     }

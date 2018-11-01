@@ -254,6 +254,13 @@ public class TestUtil {
 				ExpectedConditions.attributeContains(locator,attrName,text)));
 	}
 
+	public static void waitForUrlContains(String text){
+
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.refreshed(
+				ExpectedConditions.urlContains(text)));
+	}
+
 	public static void waitForElementOut(By locator) {
 
 		WebDriverWait wait = new WebDriverWait(driver, 5);
