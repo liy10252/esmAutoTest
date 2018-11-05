@@ -51,6 +51,9 @@ public class TimeRetrievalTest extends SeleniumTestCase {
     @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证指定日期")
     public void special(){
 
+        unknownPage.getNoLimit().click();
+        count = unknownPage.getCount().getText();
+
         unknownPage.getSpecial().click();
         unknownPage.getFromDateCalendar().click();
         unknownPage.getPrevMonth().click();
