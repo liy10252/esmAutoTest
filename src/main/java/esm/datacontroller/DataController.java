@@ -6,9 +6,7 @@ import esm.model.testcase.Cases;
 import esm.util.DatabaseUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.testng.annotations.Test;
-
 import java.util.List;
-import java.util.concurrent.CancellationException;
 
 public class DataController {
 
@@ -21,6 +19,7 @@ public class DataController {
 
         CasesService casesService = new CasesService(caseSession);
         caseList = casesService.getCaseList();
+        caseSession.close();
     }
 
     @Test

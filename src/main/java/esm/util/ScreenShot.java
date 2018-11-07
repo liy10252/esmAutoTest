@@ -2,8 +2,8 @@ package esm.util;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Random;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -29,8 +29,9 @@ public class ScreenShot {
     //按照case的名字创建验证失败截图
     public static void takeScreenshot(){
 
+        Random r = new Random();
         //创建新的文件名
-        String screenName=caseName+".jpg";
+        String screenName=caseName+"_"+r.nextInt(1000)+".jpg";
         //创建文件夹
         File dir = new File("test-output/snapshot");
         if (!dir.exists()){

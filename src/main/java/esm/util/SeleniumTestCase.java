@@ -2,7 +2,6 @@ package esm.util;
 
 import java.util.List;
 import java.util.Locale;
-
 import com.alibaba.fastjson.JSONObject;
 import esm.datacontroller.DataController;
 import esm.driver.DriverFactory;

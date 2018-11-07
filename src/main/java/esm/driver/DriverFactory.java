@@ -2,9 +2,7 @@ package esm.driver;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
-
 import lombok.extern.log4j.Log4j;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
