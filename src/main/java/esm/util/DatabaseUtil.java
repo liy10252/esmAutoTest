@@ -29,4 +29,23 @@ public class DatabaseUtil {
         return sqlSession;
 
     }
+
+    public static SqlSession getSqlSession(String dataSource){
+        //获取配置的资源文件
+        Reader reader = null;
+        try {
+            reader = Resources.getResourceAsReader("databaseConfig.xml");
+        } catch (IOException e) {
+            log.info("数据库连接出错");
+            e.printStackTrace();
+        }
+
+        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader,dataSource);
+
+        //sqlSession就是能够执行配置文件中的sql语句
+        SqlSession sqlSession = factory.openSession();
+
+        return sqlSession;
+
+    }
 }

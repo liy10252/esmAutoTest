@@ -22,7 +22,7 @@ public class ManageDomainTest extends SeleniumTestCase {
         overviewPage.getGroupPathSpan().click();
         action.moveToElement(overviewPage.getTbody()).perform();
         TestUtil.waitForChanges(By.id("assignPage_totalCount"),count);
-        Assertion.verifyEquals(overviewPage.getTbody().getText().trim().equals(""),true,"终端管理范围验证错误");
+        Assertion.verifyEquals(overviewPage.getTbody().getText().trim(),expect.get("expect"),"终端管理范围验证错误");
 
     }
 }

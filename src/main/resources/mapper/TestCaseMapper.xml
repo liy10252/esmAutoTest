@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="esm.model.testcase">
+    <!--查询case-->
+    <select id="selectCases" resultType="esm.model.testcase.Cases">
+         select * from cases;
+    </select>
+
+    <!--查询case通过casename-->
+    <select id="selectCase" parameterType="String" resultType="esm.model.testcase.Cases">
+         select * from cases where casename = #{casename};
+    </select>
+</mapper>

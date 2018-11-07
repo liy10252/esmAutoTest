@@ -2,15 +2,15 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="esm.model">
+<mapper namespace="esm.model.esmdb">
     <!--查询client-->
-    <select id="selectClient" parameterType="String" resultType="esm.model.Client">
+    <select id="selectClient" parameterType="String" resultType="esm.model.esmdb.Client">
          select * from Client
          where ComputerName=#{ComputerName};
     </select>
 
     <!--更新client-->
-    <update id="updateClient" parameterType="esm.model.Client">
+    <update id="updateClient" parameterType="esm.model.esmdb.Client">
        update Client
 
         <trim prefix="set" suffixOverrides="," suffix=" where ComputerName = #{ComputerName} ">
@@ -94,7 +94,7 @@
         ;
     </update>
 
-    <insert id="addClient" parameterType="esm.model.Client">
+    <insert id="addClient" parameterType="esm.model.esmdb.Client">
         insert into client(GUID,ComputerName,Memo,IP,NatIP,MAC,OS,Version,GroupGUID,
         Status,LastServerGUID,LastLoginAccount,LastLoginTime,NodeType,CreateTime,
         ModifyTime,Deleted,ReBoot,IsVD)

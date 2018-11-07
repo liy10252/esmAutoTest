@@ -1,40 +1,23 @@
 package esm.demo;
 
-import esm.page.ManageconsolePage;
-import esm.page.audit.AuditPlatformPage;
-import esm.page.audit.platform.PlatformPage;
-import esm.util.SeleniumTestCase;
-import esm.util.TestUtil;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import esm.model.testcase.Cases;
+import esm.util.DatabaseUtil;
+import org.apache.ibatis.session.SqlSession;
 import org.testng.annotations.Test;
 
-public class Demo1 extends SeleniumTestCase {
-
+public class Demo1{
+    public static SqlSession session = DatabaseUtil.getSqlSession("testcase");
     @Test
-    public void testDemo1() throws InterruptedException {
+    public void testDemo1()  {
 
-//        LoginPage l = new LoginPage(driver);
-//        l.login();
-        System.out.println(driver.getTitle());
+        Cases cases = session.selectOne("selectCase","com.test.a");
+        System.out.println(cases.getCasename());
 
-        Thread.sleep(3000);
-
-        ManageconsolePage p = new ManageconsolePage(driver);
-        p.gotoAudit();
-
-        Thread.sleep(3000);
-
-        TestUtil.switchWindow();
-        AuditPlatformPage a = new AuditPlatformPage(driver);
-        a.gotoPlatform();
-
-        Thread.sleep(3000);
-
-        PlatformPage pl = new PlatformPage(driver);
-        pl.gotoUnknownClient();
-
-
-
-        Thread.sleep(3000);
+        JSONObject ob = JSON.parseObject(cases.getParam());
+        System.out.println(ob.get("name").toString());
+        System.out.println(Integer.valueOf(ob.get("age").toString()));
 
     }
 }

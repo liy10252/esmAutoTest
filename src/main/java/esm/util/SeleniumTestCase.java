@@ -1,7 +1,12 @@
 package esm.util;
 
+import java.util.List;
 import java.util.Locale;
+
+import com.alibaba.fastjson.JSONObject;
+import esm.datacontroller.DataController;
 import esm.driver.DriverFactory;
+import esm.model.testcase.Cases;
 import esm.page.LoginPage;
 import esm.page.ManageconsolePage;
 import esm.page.audit.AuditPlatformPage;
@@ -18,19 +23,27 @@ public class SeleniumTestCase {
 
 	protected ResourceBundle bundle = ResourceBundle.getBundle("test-config", Locale.CHINA);
 	protected static EventFiringWebDriver driver;
+	protected static List<Cases> caseList;
+	protected static JSONObject param;
+	protected static JSONObject expect;
+
 
 	@BeforeClass
 	public void setUp() {
 
-		String packageName = this.getClass().getPackage().getName();
+		caseList = DataController.caseList;
+		String caseName = this.getClass().getCanonicalName();
 		driver = DriverFactory.start();
 		TestUtil.driver = driver;
 		ScreenShot.driver = driver;
 		log.info("开始测试case:" + this.getClass().getSimpleName()
 				+ "----------");
 		driver.navigate().to(bundle.getString("url"));
-		moduleLogin(packageName);
+		moduleLogin(caseName);
 
+		param = TestCaseUtil.getParam(caseList,caseName);
+
+		expect = TestCaseUtil.getExpect(caseList,caseName);
 	}
 
 	@AfterClass
@@ -43,7 +56,7 @@ public class SeleniumTestCase {
 	}
 
 
-	public void moduleLogin(String packageName){
+	public void moduleLogin(String caseName){
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login();
 
@@ -55,14 +68,14 @@ public class SeleniumTestCase {
 		}
 
 		ManageconsolePage p = new ManageconsolePage(driver);
-		if(packageName.contains("audit")){
+		if(caseName.contains("audit")){
 			p.gotoAudit();
 			TestUtil.switchWindow();
 			TestUtil.waitForUrlContainsText("/Audit/Client/Client.aspx");
-			if(packageName.contains("platform")){
+			if(caseName.contains("platform")){
 				AuditPlatformPage auditPlatformPage = new AuditPlatformPage(driver);
 				auditPlatformPage.gotoPlatform();
-				if(packageName.contains("unknown")){
+				if(caseName.contains("unknown")){
 					PlatformPage plPage = new PlatformPage(driver);
 					plPage.gotoUnknownClient();
 				}

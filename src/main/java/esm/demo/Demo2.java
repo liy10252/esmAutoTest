@@ -1,6 +1,6 @@
 package esm.demo;
 
-import esm.model.Client;
+import esm.model.esmdb.Client;
 import esm.util.DatabaseUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.testng.annotations.Test;

@@ -4,7 +4,7 @@
 <configuration>
     <!-- 注册对象的空间命名 -->
     <environments default="development">
-        <environment id="development">
+        <environment id="esmdb">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <!-- 1.加载数据库驱动 -->
@@ -17,9 +17,24 @@
                 <property name="password" value="Lhx130814"/>
             </dataSource>
         </environment>
+
+        <environment id="testcase">
+                 <transactionManager type="JDBC"/>
+                 <dataSource type="POOLED">
+                 <!-- 1.加载数据库驱动 -->
+                 <property name="driver" value="com.mysql.jdbc.Driver"/>
+                 <!-- 2.数据库连接地址 -->
+                 <property name="url" value="jdbc:mysql://127.0.0.1:3306/testcase"/>
+                 <!-- 数据库用户... -->
+                 <property name="username" value="root"/>
+                 <!-- 数据库密码... -->
+                 <property name="password" value="123456"/>
+                 </dataSource>
+        </environment>
     </environments>
     <!-- 注册映射文件：java对象与数据库之间的xml文件路径！ -->
 <mappers>
-    <mapper resource="mapper/ClientMapper.xml"/>
+    <mapper resource="mapper/EsmDBMapper.xml"/>
+     <mapper resource="mapper/TestCaseMapper.xml"/>
 </mappers>
 </configuration>

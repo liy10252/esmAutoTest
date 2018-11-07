@@ -1,4 +1,4 @@
-package esm.model;
+package esm.model.esmdb;
 
 import lombok.Data;
 import java.util.Date;

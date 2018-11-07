@@ -1,6 +1,6 @@
 package esm.dataservice;
 
-import esm.model.Client;
+import esm.model.esmdb.Client;
 import esm.util.TimeUtil;
 import org.apache.ibatis.session.SqlSession;
 import java.util.Date;
