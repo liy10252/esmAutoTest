@@ -21,7 +21,7 @@ public class OnlineStateTest extends SeleniumTestCase {
         TestUtil.waitForChanges(By.id("assignPage_totalCount"),count);
         count = overviewPage.getCount().getText();
         Assertion.verifyEquals(overviewPage.getTr().findElement(By.xpath("./td[1]//img"))
-        .getAttribute("src").contains("online.gif"),true,"终端在线验证错误");
+        .getAttribute("src").contains(param.getString("onlineY")),expect.getBooleanValue("expect1"),"终端在线验证错误");
 
 
 
@@ -33,6 +33,6 @@ public class OnlineStateTest extends SeleniumTestCase {
         overviewPage.getNotLoginStatus().click();
         TestUtil.waitForChanges(By.id("assignPage_totalCount"),count);
         Assertion.verifyEquals(overviewPage.getTr().findElement(By.xpath("./td[1]//img"))
-                .getAttribute("src").contains("unonline.gif"),true,"终端未在线验证错误");
+                .getAttribute("src").contains(param.getString("onlineN")),expect.getBooleanValue("expect2"),"终端未在线验证错误");
     }
 }

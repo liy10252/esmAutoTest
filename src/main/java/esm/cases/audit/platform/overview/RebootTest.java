@@ -21,7 +21,7 @@ public class RebootTest extends SeleniumTestCase {
         TestUtil.waitForChanges(By.id("assignPage_totalCount"),count);
         count = overviewPage.getCount().getText();
         Assertion.verifyEquals(overviewPage.getTr().findElement(By.xpath("./td[2]")).
-                getText(),"否","终端需要重启否验证错误");
+                getText(),expect.getString("expect1"),"终端需要重启否验证错误");
 
     }
 
@@ -31,6 +31,6 @@ public class RebootTest extends SeleniumTestCase {
         overviewPage.getYesReboot().click();
         TestUtil.waitForChanges(By.id("assignPage_totalCount"),count);
         Assertion.verifyEquals(overviewPage.getTr().findElement(By.xpath("./td[2]")).
-                getText(),"是","终端需要重启是验证错误");
+                getText(),expect.getString("expect2"),"终端需要重启是验证错误");
     }
 }

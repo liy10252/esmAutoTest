@@ -17,26 +17,26 @@ public class SearchTest extends SeleniumTestCase {
 
         overviewPage = new OverviewPage(driver);
 
-        methodUtil("ESMCLIEN-DC447A",overviewPage.getComputerName(),By.xpath("./td[1]//span[@class='memoColor']"));
+        methodUtil(param.getString("computer"),overviewPage.getComputerName(),By.xpath("./td[1]//span[@class='memoColor']"));
     }
 
     @Test(dependsOnMethods = "searchComputer",description = "终端搜索条验证ip")
     public void searchIp(){
 
-        methodUtil("192.168.2.6",overviewPage.getIp(),By.xpath("./td[3]"));
+        methodUtil(param.getString("ip"),overviewPage.getIp(),By.xpath("./td[3]"));
 
     }
 
     @Test(dependsOnMethods = "searchComputer",description = "终端搜索条验证mac")
     public void searchMac(){
 
-        methodUtil("06-1B-11-C6-A0-16",overviewPage.getMac(),By.xpath("./td[4]"));
+        methodUtil(param.getString("mac"),overviewPage.getMac(),By.xpath("./td[4]"));
     }
 
     @Test(dependsOnMethods = "searchComputer",description = "终端搜索条验证version")
     public void searchVersion(){
 
-        methodUtil("3.0.0.00",overviewPage.getVersion(),By.xpath("./td[5]"));
+        methodUtil(param.getString("version"),overviewPage.getVersion(),By.xpath("./td[5]"));
     }
 
 

@@ -18,21 +18,21 @@ public class TimeRetrievalTest extends SeleniumTestCase {
 
         unknownPage = new UnknownPage(driver);
 
-        methodUtil(unknownPage.getThisWeek(),"WIN-2AL1RFMO551");
+        methodUtil(unknownPage.getThisWeek(),expect.getString("thisWeek"));
 
     }
 
     @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证上周")
     public void lastWeek(){
 
-        methodUtil(unknownPage.getLastWeek(),"WIN-2AL1RFMO552");
+        methodUtil(unknownPage.getLastWeek(),expect.getString("lastWeek"));
 
     }
 
     @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证本月")
     public void thisMonth(){
 
-        methodUtil(unknownPage.getThisMonth(),"WIN-2AL1RFMO551");
+        methodUtil(unknownPage.getThisMonth(),expect.getString("thisMonth"));
     }
 
     @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证上月")
@@ -43,7 +43,7 @@ public class TimeRetrievalTest extends SeleniumTestCase {
         TestUtil.waitForAttrContains(By.xpath("//tbody/tr[3]/td[1]"),"style","height");
         String value = unknownPage.getTr().findElement(By.xpath("./td[1]//span[@class='memoColor']"))
                 .getText();
-        Assertion.verifyEquals(value.equals("WIN-2AL1RFMO552") || value.equals("WIN-2AL1RFMO553"),
+        Assertion.verifyEquals(value.equals(expect.getString("lastMonth1")) || value.equals(expect.getString("lastMonth2")),
                 true,"未知终端时间检索验证错误");
         count = unknownPage.getCount().getText();
     }
@@ -62,9 +62,9 @@ public class TimeRetrievalTest extends SeleniumTestCase {
         TestUtil.waitForChanges(By.id("assignPage_totalCount"),count);
 
         Assertion.verifyEquals(unknownPage.getTr().findElement(By.xpath("./td[1]//span[@class='memoColor']"))
-                .getText(),"WIN-2AL1RFMO551","未知终端时间检索验证错误");
+                .getText(),expect.getString("special1"),"未知终端时间检索验证错误");
         Assertion.verifyEquals(unknownPage.getTr().findElement(By.xpath("./following-sibling::tr[1]/td[1]//span[@class='memoColor']"))
-                .getText(),"WIN-2AL1RFMO552","未知终端时间检索验证错误");
+                .getText(),expect.getString("special2"),"未知终端时间检索验证错误");
 
 
     }
