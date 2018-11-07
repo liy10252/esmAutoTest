@@ -35,6 +35,7 @@ public class SeleniumTestCase {
 		driver = DriverFactory.start();
 		TestUtil.driver = driver;
 		ScreenShot.driver = driver;
+		ScreenShot.caseName = caseName;
 		log.info("开始测试case:" + this.getClass().getSimpleName()
 				+ "----------");
 		driver.navigate().to(bundle.getString("url"));
