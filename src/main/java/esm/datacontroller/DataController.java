@@ -16,6 +16,13 @@ public class DataController {
     public static SqlSession caseSession = DatabaseUtil.getSqlSession("testcase");
     public static List<Cases> caseList;
 
+
+    static{
+
+        CasesService casesService = new CasesService(caseSession);
+        caseList = casesService.getCaseList();
+    }
+
     @Test
     public void updateClient(){
 
@@ -26,11 +33,6 @@ public class DataController {
         esmdbSession.commit();
     }
 
-    @Test
-    public static void getCases() {
 
-        CasesService casesService = new CasesService(caseSession);
-        caseList = casesService.getCaseList();
-    }
 }
 

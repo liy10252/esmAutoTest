@@ -23,7 +23,7 @@ public class SeleniumTestCase {
 
 	protected ResourceBundle bundle = ResourceBundle.getBundle("test-config", Locale.CHINA);
 	protected static EventFiringWebDriver driver;
-	protected static List<Cases> caseList;
+	protected static List<Cases> caseList = DataController.caseList;
 	protected static JSONObject param;
 	protected static JSONObject expect;
 
@@ -31,7 +31,6 @@ public class SeleniumTestCase {
 	@BeforeClass
 	public void setUp() {
 
-		caseList = DataController.caseList;
 		String caseName = this.getClass().getCanonicalName();
 		driver = DriverFactory.start();
 		TestUtil.driver = driver;

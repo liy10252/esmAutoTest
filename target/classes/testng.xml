@@ -2,7 +2,6 @@
 <suite name="esm的测试套件">
     <test name="这些是case">
         <classes>
-            <class name="esm.datacontroller.DataController"/>
             <class name="esm.cases.audit.platform.overview.ManageDomainTest"/>
             <class name="esm.cases.audit.platform.overview.OnlineStateTest"/>
             <class name="esm.cases.audit.platform.overview.RebootTest"/>

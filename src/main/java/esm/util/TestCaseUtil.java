@@ -10,7 +10,7 @@ public class TestCaseUtil {
 	public static JSONObject getParam(List<Cases> casesList,String caseName){
 
 		for(Cases cases : casesList){
-			if(cases.getCasename().equals(caseName)){
+			if(caseName.contains(cases.getCasename())){
 				if(cases.getParam()==null || cases.getParam() == ""){
 					return null;
 				}else {
@@ -24,7 +24,7 @@ public class TestCaseUtil {
 	public static JSONObject getExpect(List<Cases> casesList,String caseName){
 
 		for(Cases cases : casesList){
-			if(cases.getCasename().equals(caseName)){
+			if(caseName.contains(cases.getCasename())){
 				if(cases.getExpect() == null || cases.getExpect() == ""){
 					return null;
 				}

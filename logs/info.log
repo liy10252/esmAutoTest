@@ -77,3 +77,215 @@ INFO  [2018-11-07 09:18:09] esm.listener.MyEventListener::beforeFindBy - 查找�
 INFO  [2018-11-07 09:18:10] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
 INFO  [2018-11-07 09:18:10] esm.listener.MyEventListener::beforeClickOn - 点击元素：
 INFO  [2018-11-07 09:18:10] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:36:32] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:36:32] esm.util.SeleniumTestCase::setUp - 开始测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:36:33] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:36:33] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:36:33] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:36:33] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:36:34] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:36:34] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:36:34] esm.listener.MyEventListener::beforeClickOn - 点击元素：审计平台
+INFO  [2018-11-07 09:36:34] esm.page.ManageconsolePage::gotoAudit - 进入审计平台------
+INFO  [2018-11-07 09:36:35] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //ul[@id='topMenu']//span[text()='平台']
+INFO  [2018-11-07 09:36:35] esm.listener.MyEventListener::beforeClickOn - 点击元素：平台
+INFO  [2018-11-07 09:36:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:36:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: groupPath
+INFO  [2018-11-07 09:36:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //a[@title='根管理组']/preceding-sibling::span[1]
+INFO  [2018-11-07 09:36:44] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:36:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:36:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:36:45] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:36:45] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:36:45] esm.util.SeleniumTestCase::tearDown - 结束测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:36:46] esm.util.SeleniumTestCase::tearDown - 关闭浏览器
+INFO  [2018-11-07 09:36:49] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:36:49] esm.util.SeleniumTestCase::setUp - 开始测试case:OnlineStateTest----------
+INFO  [2018-11-07 09:36:49] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:36:49] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:36:49] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:36:49] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:36:50] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:36:50] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:43:46] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:43:46] esm.util.SeleniumTestCase::setUp - 开始测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:43:47] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:43:47] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:43:47] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:43:47] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:43:48] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:43:48] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:43:48] esm.listener.MyEventListener::beforeClickOn - 点击元素：审计平台
+INFO  [2018-11-07 09:43:48] esm.page.ManageconsolePage::gotoAudit - 进入审计平台------
+INFO  [2018-11-07 09:43:49] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //ul[@id='topMenu']//span[text()='平台']
+INFO  [2018-11-07 09:43:49] esm.listener.MyEventListener::beforeClickOn - 点击元素：平台
+INFO  [2018-11-07 09:45:37] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:45:37] esm.util.SeleniumTestCase::setUp - 开始测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:45:38] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:45:38] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:45:38] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:45:38] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:45:38] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:45:38] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:45:38] esm.listener.MyEventListener::beforeClickOn - 点击元素：审计平台
+INFO  [2018-11-07 09:45:38] esm.page.ManageconsolePage::gotoAudit - 进入审计平台------
+INFO  [2018-11-07 09:45:39] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //ul[@id='topMenu']//span[text()='平台']
+INFO  [2018-11-07 09:45:39] esm.listener.MyEventListener::beforeClickOn - 点击元素：平台
+INFO  [2018-11-07 09:52:22] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:52:22] esm.util.SeleniumTestCase::setUp - 开始测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:52:22] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:52:22] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:52:23] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:52:23] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:52:23] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:52:23] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:52:23] esm.listener.MyEventListener::beforeClickOn - 点击元素：审计平台
+INFO  [2018-11-07 09:52:23] esm.page.ManageconsolePage::gotoAudit - 进入审计平台------
+INFO  [2018-11-07 09:52:24] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //ul[@id='topMenu']//span[text()='平台']
+INFO  [2018-11-07 09:52:24] esm.listener.MyEventListener::beforeClickOn - 点击元素：平台
+INFO  [2018-11-07 09:52:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:52:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: groupPath
+INFO  [2018-11-07 09:52:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //a[@title='根管理组']/preceding-sibling::span[1]
+INFO  [2018-11-07 09:52:27] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:52:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:52:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:52:28] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:52:28] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:52:28] esm.util.SeleniumTestCase::tearDown - 结束测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:52:28] esm.util.SeleniumTestCase::tearDown - 关闭浏览器
+INFO  [2018-11-07 09:54:13] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:54:13] esm.util.SeleniumTestCase::setUp - 开始测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:54:13] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:54:14] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:54:14] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:54:14] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:54:14] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:54:14] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:54:14] esm.listener.MyEventListener::beforeClickOn - 点击元素：审计平台
+INFO  [2018-11-07 09:54:14] esm.page.ManageconsolePage::gotoAudit - 进入审计平台------
+INFO  [2018-11-07 09:54:15] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //ul[@id='topMenu']//span[text()='平台']
+INFO  [2018-11-07 09:54:15] esm.listener.MyEventListener::beforeClickOn - 点击元素：平台
+INFO  [2018-11-07 09:54:17] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:54:17] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: groupPath
+INFO  [2018-11-07 09:54:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //a[@title='根管理组']/preceding-sibling::span[1]
+INFO  [2018-11-07 09:54:18] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:54:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:54:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:54:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:54:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:54:18] esm.util.SeleniumTestCase::tearDown - 结束测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:54:19] esm.util.SeleniumTestCase::tearDown - 关闭浏览器
+INFO  [2018-11-07 09:54:39] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:54:39] esm.util.SeleniumTestCase::setUp - 开始测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:54:39] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:54:40] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:54:40] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:54:40] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:54:40] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:54:40] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:54:40] esm.listener.MyEventListener::beforeClickOn - 点击元素：审计平台
+INFO  [2018-11-07 09:54:40] esm.page.ManageconsolePage::gotoAudit - 进入审计平台------
+INFO  [2018-11-07 09:54:41] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //ul[@id='topMenu']//span[text()='平台']
+INFO  [2018-11-07 09:54:41] esm.listener.MyEventListener::beforeClickOn - 点击元素：平台
+INFO  [2018-11-07 09:54:43] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:54:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: groupPath
+INFO  [2018-11-07 09:54:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //a[@title='根管理组']/preceding-sibling::span[1]
+INFO  [2018-11-07 09:54:44] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:54:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:54:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:54:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:54:44] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:54:44] esm.util.SeleniumTestCase::tearDown - 结束测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:54:45] esm.util.SeleniumTestCase::tearDown - 关闭浏览器
+INFO  [2018-11-07 09:54:48] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:54:48] esm.util.SeleniumTestCase::setUp - 开始测试case:OnlineStateTest----------
+INFO  [2018-11-07 09:54:49] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:54:49] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:54:49] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:54:49] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:54:49] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:54:49] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:54:49] esm.listener.MyEventListener::beforeClickOn - 点击元素：审计平台
+INFO  [2018-11-07 09:54:49] esm.page.ManageconsolePage::gotoAudit - 进入审计平台------
+INFO  [2018-11-07 09:56:13] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:56:13] esm.util.SeleniumTestCase::setUp - 开始测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:56:14] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:56:14] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:56:14] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:56:14] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:56:14] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:56:15] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:56:15] esm.listener.MyEventListener::beforeClickOn - 点击元素：审计平台
+INFO  [2018-11-07 09:56:15] esm.page.ManageconsolePage::gotoAudit - 进入审计平台------
+INFO  [2018-11-07 09:56:16] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //ul[@id='topMenu']//span[text()='平台']
+INFO  [2018-11-07 09:56:16] esm.listener.MyEventListener::beforeClickOn - 点击元素：平台
+INFO  [2018-11-07 09:56:16] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:56:16] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: groupPath
+INFO  [2018-11-07 09:56:16] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //a[@title='根管理组']/preceding-sibling::span[1]
+INFO  [2018-11-07 09:56:16] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:56:16] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:56:16] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:56:17] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:56:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:56:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:56:19] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:56:19] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:56:19] esm.util.SeleniumTestCase::tearDown - 结束测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:56:19] esm.util.SeleniumTestCase::tearDown - 关闭浏览器
+INFO  [2018-11-07 09:57:13] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:57:13] esm.util.SeleniumTestCase::setUp - 开始测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:57:13] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:57:14] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:57:14] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:57:14] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:57:14] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:57:14] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:57:14] esm.listener.MyEventListener::beforeClickOn - 点击元素：审计平台
+INFO  [2018-11-07 09:57:14] esm.page.ManageconsolePage::gotoAudit - 进入审计平台------
+INFO  [2018-11-07 09:57:15] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //ul[@id='topMenu']//span[text()='平台']
+INFO  [2018-11-07 09:57:15] esm.listener.MyEventListener::beforeClickOn - 点击元素：平台
+INFO  [2018-11-07 09:57:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: groupPath
+INFO  [2018-11-07 09:57:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //a[@title='根管理组']/preceding-sibling::span[1]
+INFO  [2018-11-07 09:57:18] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:57:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:57:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:18] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.tagName: tbody
+INFO  [2018-11-07 09:57:18] esm.util.SeleniumTestCase::tearDown - 结束测试case:ManageDomainTest----------
+INFO  [2018-11-07 09:57:19] esm.util.SeleniumTestCase::tearDown - 关闭浏览器
+INFO  [2018-11-07 09:57:22] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:57:22] esm.util.SeleniumTestCase::setUp - 开始测试case:OnlineStateTest----------
+INFO  [2018-11-07 09:57:23] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:57:23] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:57:23] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
+INFO  [2018-11-07 09:57:23] esm.listener.MyEventListener::beforeClickOn - 点击元素：
+INFO  [2018-11-07 09:57:23] esm.page.LoginPage::login - 用户已登陆------
+INFO  [2018-11-07 09:57:24] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //div[@id='header_user_audit']/a
+INFO  [2018-11-07 09:57:24] esm.listener.MyEventListener::beforeClickOn - 点击元素：审计平台
+INFO  [2018-11-07 09:57:24] esm.page.ManageconsolePage::gotoAudit - 进入审计平台------
+INFO  [2018-11-07 09:57:25] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //ul[@id='topMenu']//span[text()='平台']
+INFO  [2018-11-07 09:57:25] esm.listener.MyEventListener::beforeClickOn - 点击元素：平台
+INFO  [2018-11-07 09:57:25] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:25] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //dd[@id='status']//a[text()='已登录']
+INFO  [2018-11-07 09:57:25] esm.listener.MyEventListener::beforeClickOn - 点击元素：已登录
+INFO  [2018-11-07 09:57:25] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:26] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:26] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //tbody/tr[1]
+INFO  [2018-11-07 09:57:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: ./td[1]//img
+INFO  [2018-11-07 09:57:27] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //dd[@id='status']//a[text()='未登录']
+INFO  [2018-11-07 09:57:27] esm.listener.MyEventListener::beforeClickOn - 点击元素：未登录
+INFO  [2018-11-07 09:57:28] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: assignPage_totalCount
+INFO  [2018-11-07 09:57:28] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: //tbody/tr[1]
+INFO  [2018-11-07 09:57:28] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.xpath: ./td[1]//img
+INFO  [2018-11-07 09:57:28] esm.util.SeleniumTestCase::tearDown - 结束测试case:OnlineStateTest----------
+INFO  [2018-11-07 09:57:28] esm.util.SeleniumTestCase::tearDown - 关闭浏览器
+INFO  [2018-11-07 09:57:31] esm.driver.DriverFactory::start - 启动浏览器：chrome
+INFO  [2018-11-07 09:57:31] esm.util.SeleniumTestCase::setUp - 开始测试case:RebootTest----------
+INFO  [2018-11-07 09:57:32] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtUserName
+INFO  [2018-11-07 09:57:32] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: txtPassword
+INFO  [2018-11-07 09:57:32] esm.listener.MyEventListener::beforeFindBy - 查找元素：By.id: btnLogin
