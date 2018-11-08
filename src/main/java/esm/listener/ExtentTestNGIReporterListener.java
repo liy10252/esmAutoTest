@@ -1,17 +1,16 @@
 package esm.listener;
 
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.ResourceCDN;
-import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.model.TestAttribute;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import esm.util.ScreenShot;
 import org.testng.*;
 import org.testng.xml.XmlSuite;
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class ExtentTestNGIReporterListener implements IReporter {
@@ -122,7 +121,7 @@ public class ExtentTestNGIReporterListener implements IReporter {
         extent.setReportUsesManualConfiguration(true);
     }
 
-    private void buildTestNodes(ExtentTest extenttest, IResultMap tests, Status status) {
+    private void buildTestNodes(ExtentTest extenttest, IResultMap tests, Status status){
         //存在父节点时，获取父节点的标签
         String[] categories=new String[0];
         if(extenttest != null ){
@@ -175,6 +174,12 @@ public class ExtentTestNGIReporterListener implements IReporter {
                     test.debug(output);
                 }
                 if (result.getThrowable() != null) {
+//                    try {
+//
+//                        test.log(status, "Screencast below:"+test.addScreenCaptureFromPath(ScreenShot.getScreenshot(result.getInstanceName())));
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
                     test.log(status, result.getThrowable());
                 }
                 else {

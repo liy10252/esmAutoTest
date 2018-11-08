@@ -15,7 +15,7 @@ public class TestngRetry implements IRetryAnalyzer {
 	private static int maxRetryCount;
 
 	static {
-//外围文件配置最大运行次数
+		//外围文件配置最大运行次数
 		maxRetryCount = Integer.parseInt(bundle.getString("maxRetryCount"));
 		log.info("maxRunCount=" + (maxRetryCount));
 	}

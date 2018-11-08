@@ -3,11 +3,12 @@
     <test name="这些是case">
         <classes>
             <class name="esm.cases.audit.platform.overview.ManageDomainTest"/>
-            <class name="esm.cases.audit.platform.overview.OnlineStateTest"/>
-            <class name="esm.cases.audit.platform.overview.RebootTest"/>
-            <class name="esm.cases.audit.platform.overview.SearchTest"/>
-            <class name="esm.cases.audit.platform.unknown.TimeRetrievalTest"/>
-            <class name="esm.cases.audit.platform.unknown.SearchTest"/>
+
+            <!--<class name="esm.cases.audit.platform.overview.OnlineStateTest"/>-->
+            <!--<class name="esm.cases.audit.platform.overview.RebootTest"/>-->
+            <!--<class name="esm.cases.audit.platform.overview.SearchTest"/>-->
+            <!--<class name="esm.cases.audit.platform.unknown.TimeRetrievalTest"/>-->
+            <!--<class name="esm.cases.audit.platform.unknown.SearchTest"/>-->
         </classes>
 
     </test>

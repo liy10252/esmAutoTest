@@ -14,9 +14,17 @@ public class ScreenShot {
 	public static EventFiringWebDriver driver;
 	public static String caseName;
 	
-    public static void takeScreenshot(String screenPath){
-    	
+    public static void takeScreenshot(String fileName){
+
+        String screenPath = getScreenshot(fileName);
+
+        File screenFile = new File(screenPath);
+        if(screenFile.exists()){
+            screenFile.delete();
+        }
+
         try {
+
             //获取截图file
             File scrFile= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             //将图片移动到指定位置
@@ -26,21 +34,16 @@ public class ScreenShot {
         }
     }
 
-    //按照case的名字创建验证失败截图
-    public static void takeScreenshot(){
+    public static String getScreenshot(String fileName){
 
-        Random r = new Random();
-        //创建新的文件名
-        String screenName=caseName+"_"+r.nextInt(1000)+".jpg";
-        //创建文件夹
         File dir = new File("test-output/snapshot");
         if (!dir.exists()){
             dir.mkdirs();
         }
-        //获取新文件名的绝对路径
-        String screenPath= dir.getAbsolutePath()+"/"+screenName;
-        //截图
-        takeScreenshot(screenPath);
+
+        String screenPath= dir.getAbsolutePath()+"\\"+fileName+".png";
+        return screenPath;
     }
+
 }
 

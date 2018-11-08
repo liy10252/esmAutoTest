@@ -5,24 +5,24 @@ import lombok.extern.log4j.Log4j;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
+import org.testng.asserts.Assertion;
 
 import java.util.*;
 
 @Log4j
-public class AssertionListener extends TestListenerAdapter {
+public class TestngListener extends TestListenerAdapter {
 
-//	@Override
-//	public void onTestStart(ITestResult result) {
-//		Assertion.flag = true;
-//		Assertion.errors.clear();
-//	}
+	@Override
+	public void onTestStart(ITestResult tr) {
+		super.onTestStart(tr);
+	}
 
 	@Override
 	public void onTestFailure(ITestResult tr) {
 //		this.handleAssertion(tr);
 		super.onTestFailure(tr);
 		log.info(tr.getName() + " Failure");
-		ScreenShot.takeScreenshot();
+		ScreenShot.takeScreenshot(tr.getInstanceName());
 	}
 
 	@Override
@@ -30,8 +30,7 @@ public class AssertionListener extends TestListenerAdapter {
 		super.onTestSkipped(tr);
 //		this.handleAssertion(tr);
 		log.info(tr.getName() + " Skipped");
-		ScreenShot.takeScreenshot();
-	}
+		}
 
 	@Override
 	public void onTestSuccess(ITestResult tr) {

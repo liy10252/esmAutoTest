@@ -5,6 +5,7 @@ import java.util.Locale;
 import com.alibaba.fastjson.JSONObject;
 import esm.datacontroller.DataController;
 import esm.driver.DriverFactory;
+import esm.listener.TestngListener;
 import esm.model.testcase.Cases;
 import esm.page.LoginPage;
 import esm.page.ManageconsolePage;
@@ -16,7 +17,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.*;
 import java.util.ResourceBundle;
 
-@Listeners({ esm.listener.AssertionListener.class })
+@Listeners({ TestngListener.class })
 @Log4j
 public class SeleniumTestCase {
 
