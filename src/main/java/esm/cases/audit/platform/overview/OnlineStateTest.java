@@ -5,6 +5,7 @@ import esm.util.SeleniumTestCase;
 import esm.util.TestUtil;
 import esm.util.TestngRetry;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,21 +18,22 @@ public class OnlineStateTest extends SeleniumTestCase {
     public void onlineStateY() {
 
         overviewPage = new OverviewPage(driver);
-        count = overviewPage.getCount().getText();
-        overviewPage.getAlreadyLoginStatus().click();
-        TestUtil.waitForChanges(By.id("assignPage_totalCount"), count);
-        count = overviewPage.getCount().getText();
-
-        Assert.assertEquals(overviewPage.getTr().findElement(By.xpath("./td[1]//img"))
-                .getAttribute("src").contains(param.getString("onlineY")), expect.getBooleanValue("expect1"), "终端在线验证错误");
+        mothodUtil(overviewPage.getAlreadyLoginStatus(),param.getString("onlineY"),expect.getBooleanValue("expect1"));
     }
 
     @Test(dependsOnMethods = "onlineStateY", description = "终端在线状态验证为离线",retryAnalyzer = TestngRetry.class)
     public void onlineStateN() {
+        mothodUtil(overviewPage.getNotLoginStatus(),param.getString("onlineN"),expect.getBooleanValue("expect2"));
+    }
 
-        overviewPage.getNotLoginStatus().click();
+    public void mothodUtil(WebElement element,String text,boolean expect){
+
+        overviewPage.getUnlimitedStatus().click();
+        count = overviewPage.getCount().getText();
+        element.click();
         TestUtil.waitForChanges(By.id("assignPage_totalCount"), count);
         Assert.assertEquals(overviewPage.getTr().findElement(By.xpath("./td[1]//img"))
-                .getAttribute("src").contains(param.getString("onlineN")), expect.getBooleanValue("expect2"), "终端未在线验证错误");
+                .getAttribute("src").contains(text), expect, "终端未在线验证错误");
+
     }
 }

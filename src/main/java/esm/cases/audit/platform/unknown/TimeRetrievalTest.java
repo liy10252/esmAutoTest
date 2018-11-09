@@ -40,6 +40,7 @@ public class TimeRetrievalTest extends SeleniumTestCase {
     public void lastMonth(){
 
         unknownPage.getNoLimit().click();
+        count = unknownPage.getCount().getText();
         unknownPage.getLastMonth().click();
         TestUtil.waitForAttrContains(By.xpath("//tbody/tr[3]/td[1]"),"style","height");
         String value = unknownPage.getTr().findElement(By.xpath("./td[1]//span[@class='memoColor']"))
@@ -47,7 +48,6 @@ public class TimeRetrievalTest extends SeleniumTestCase {
 
         Assert.assertEquals(value.equals(expect.getString("lastMonth1")) || value.equals(expect.getString("lastMonth2")),
                 true,"未知终端时间检索验证错误");
-        count = unknownPage.getCount().getText();
     }
 
     @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证指定日期",retryAnalyzer = TestngRetry.class)
@@ -55,10 +55,11 @@ public class TimeRetrievalTest extends SeleniumTestCase {
 
         unknownPage.getNoLimit().click();
         count = unknownPage.getCount().getText();
-
         unknownPage.getSpecial().click();
         unknownPage.getFromDateCalendar().click();
         unknownPage.getPrevMonth().click();
+
+        TestUtil.waitForVisbility(By.className("goToday"));
         unknownPage.getDateItem().click();
 
         TestUtil.waitForChanges(By.id("assignPage_totalCount"),count);
