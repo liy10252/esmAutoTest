@@ -2,6 +2,7 @@ package esm.datacontroller;
 
 import esm.dataservice.CasesService;
 import esm.dataservice.ClientService;
+import esm.dataservice.ScanEventService;
 import esm.model.testcase.Cases;
 import esm.util.DatabaseUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -11,6 +12,7 @@ import java.util.List;
 public class DataController {
 
     public static SqlSession esmdbSession = DatabaseUtil.getSqlSession("esmdb");
+    public static SqlSession esmlogSession = DatabaseUtil.getSqlSession("esmlog");
     public static SqlSession caseSession = DatabaseUtil.getSqlSession("testcase");
     public static List<Cases> caseList;
 
@@ -30,6 +32,14 @@ public class DataController {
         clientService.updateClientWeek();
         clientService.updateClientMonth();
         esmdbSession.commit();
+    }
+
+    @Test
+    public void updateScanEvent(){
+
+        ScanEventService scanEventService = new ScanEventService(esmlogSession);
+        scanEventService.updateTimelastWeek();
+        esmlogSession.commit();
     }
 
 

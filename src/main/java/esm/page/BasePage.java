@@ -7,7 +7,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 public class BasePage {
 
 	EventFiringWebDriver driver;
-	private final int TIMEOUT = 15;
+	private final int TIMEOUT = 10;
 
 	public BasePage(EventFiringWebDriver driver) {
 		this.driver = driver;

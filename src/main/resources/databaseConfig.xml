@@ -18,6 +18,20 @@
             </dataSource>
         </environment>
 
+        <environment id="esmlog">
+                    <transactionManager type="JDBC"/>
+                    <dataSource type="POOLED">
+                        <!-- 1.加载数据库驱动 -->
+                        <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+                        <!-- 2.数据库连接地址 -->
+                        <property name="url" value="jdbc:sqlserver://192.168.2.6:1433;DatabaseName=esmlogdb"/>
+                        <!-- 数据库用户... -->
+                        <property name="username" value="sa"/>
+                        <!-- 数据库密码... -->
+                        <property name="password" value="Lhx130814"/>
+                    </dataSource>
+                </environment>
+
         <environment id="testcase">
                  <transactionManager type="JDBC"/>
                  <dataSource type="POOLED">
@@ -35,6 +49,7 @@
     <!-- 注册映射文件：java对象与数据库之间的xml文件路径！ -->
 <mappers>
     <mapper resource="mapper/EsmDBMapper.xml"/>
+     <mapper resource="mapper/EsmLogMapper.xml"/>
      <mapper resource="mapper/TestCaseMapper.xml"/>
 </mappers>
 </configuration>

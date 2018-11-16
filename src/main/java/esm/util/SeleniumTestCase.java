@@ -72,13 +72,17 @@ public class SeleniumTestCase {
 			p.gotoAudit();
 			TestUtil.switchWindow();
 			TestUtil.waitForUrlContainsText("/Audit/Client/Client.aspx");
+			AuditPlatformPage auditPlatformPage = new AuditPlatformPage(driver);
 			if(caseName.contains("platform")){
-				AuditPlatformPage auditPlatformPage = new AuditPlatformPage(driver);
 				auditPlatformPage.gotoPlatform();
 				if(caseName.contains("unknown")){
 					PlatformPage plPage = new PlatformPage(driver);
 					plPage.gotoUnknownClient();
 				}
+			}
+
+			if(caseName.contains("antivirus")){
+				auditPlatformPage.gotoAntivirus();
 			}
 		}
 

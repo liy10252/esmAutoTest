@@ -10,6 +10,8 @@ public class AuditPlatformPage extends BasePage {
     @FindBy(xpath = "//ul[@id='topMenu']//span[text()='平台']")
     private WebElement platformLink;
 
+    @FindBy(xpath = "//ul[@id='topMenu']//span[text()='防病毒']")
+    private WebElement antivirusLink;
 
     public AuditPlatformPage(EventFiringWebDriver driver) {
         super(driver);
@@ -18,4 +20,6 @@ public class AuditPlatformPage extends BasePage {
     public void gotoPlatform(){
         platformLink.click();
     }
+
+    public void gotoAntivirus(){antivirusLink.click();}
 }

@@ -15,29 +15,29 @@ public class ClientService {
 
     //更新指定client日期为当天
     public void updateClientDay(){
-        Client client = new Client();
-        client.setCreateTime(new Date());
-        client.setComputerName("WIN-2AL1RFMO551");
-        session.update("updateClient",client);
+        updateUnknowClientTime(new Date(),"WIN-2AL1RFMO551");
 
     }
 
     //更新指定client日期为上周
     public void updateClientWeek(){
-        Client client = new Client();
-        client.setCreateTime(TimeUtil.getLastWeekDate());
-        client.setComputerName("WIN-2AL1RFMO552");
-        session.update("updateClient",client);
+        updateUnknowClientTime(TimeUtil.getLastWeekDate(),"WIN-2AL1RFMO552");
 
     }
 
     //更新指定client日期为上月
     public void updateClientMonth(){
-        Client client = new Client();
-        client.setCreateTime(TimeUtil.getPMonthDate());
-        client.setComputerName("WIN-2AL1RFMO553");
-        session.update("updateClient",client);
+        updateUnknowClientTime(TimeUtil.getPMonthDate(),"WIN-2AL1RFMO553");
 
+    }
+
+    //更新指定未知client日期字段
+    public void updateUnknowClientTime(Date date,String computerName){
+
+        Client client = new Client();
+        client.setCreateTime(date);
+        client.setComputerName(computerName);
+        session.update("updateClient",client);
     }
 
 }

@@ -94,6 +94,7 @@
         ;
     </update>
 
+    <!--插入client-->
     <insert id="addClient" parameterType="esm.model.esmdb.Client">
         insert into client(GUID,ComputerName,Memo,IP,NatIP,MAC,OS,Version,GroupGUID,
         Status,LastServerGUID,LastLoginAccount,LastLoginTime,NodeType,CreateTime,
