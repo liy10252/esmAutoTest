@@ -130,7 +130,7 @@ public class TestUtil {
 	// 线程等待方法
 	public static void seleniumWait() {
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

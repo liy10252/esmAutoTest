@@ -45,6 +45,7 @@ public class SearchTest extends SeleniumTestCase {
 
 		netWorkKillPage.getSearchBar().sendKeys(text);
 		TestUtil.waitForVisbility(element);
+		TestUtil.seleniumWait();
 		element.click();
 		netWorkKillPage.getSearchButton().click();
 		TestUtil.waitForChanges(By.id("assignPage_totalCount"), count);
