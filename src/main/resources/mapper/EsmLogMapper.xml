@@ -7,7 +7,8 @@
     <update id="updateScanEvent" parameterType="esm.model.esmlog.XAV_ScanEvent">
         update XAV_ScanEvent
 
-        <trim prefix="set" suffixOverrides="," suffix=" where GUID = #{GUID} ">
+        <trim prefix="set" suffixOverrides="," suffix=" where GUID = #{GUID} and
+            Time = (SELECT max(Time) FROM XAV_ScanEvent WHERE GUID = #{GUID} ) ">
             <if test="null != Time">
                 Time=#{Time},
             </if>

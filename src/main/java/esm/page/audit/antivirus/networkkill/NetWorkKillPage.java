@@ -57,6 +57,35 @@ public class NetWorkKillPage extends BasePage {
 	@FindBy(xpath = "//div[@id='tableBox1']//tbody/tr[1]")
 	private WebElement tr;
 
+	@FindBy(xpath = "//dd[@id='searchScanTime']//a[text()='不限']")
+	private WebElement scanUnlimited;
+
+	@FindBy(xpath = "//dd[@id='searchScanTime']//a[text()='超过1周']")
+	private WebElement lastWeek;
+
+	@FindBy(xpath = "//dd[@id='searchScanTime']//a[text()='超过1个月']")
+	private WebElement lastMonth;
+
+	@FindBy(xpath = "//dd[@id='searchScanTime']//a[text()='从未扫描']")
+	private WebElement noScan;
+
+	@FindBy(xpath = "//dd[@id='searchScanTime']//a[text()='扫描中']")
+	private WebElement scanning;
+
+	@FindBy(xpath = "//div[@id='tableBox1']//tbody/tr[1]/td[2]//span[2]")
+	private WebElement scanStatus;
+
+	@FindBy(xpath = "//dd[@id='searchOnline']//a[text()='不限']")
+	private WebElement onlineUnlimited;
+
+	@FindBy(xpath = "//dd[@id='searchOnline']//a[text()='已登录']")
+	private WebElement onLine;
+
+	@FindBy(xpath = "//dd[@id='searchOnline']//a[text()='未登录']")
+	private WebElement offLine;
+
+	@FindBy(xpath = "//div[@id='tableBox1']//tbody/tr[1]/td[2]//img")
+	private WebElement onLineStatus;
 
 	public NetWorkKillPage(EventFiringWebDriver driver) {
 		super(driver);

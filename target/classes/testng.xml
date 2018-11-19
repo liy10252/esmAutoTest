@@ -8,6 +8,11 @@
             <class name="esm.cases.audit.platform.overview.SearchTest"/>
             <class name="esm.cases.audit.platform.unknown.TimeRetrievalTest"/>
             <class name="esm.cases.audit.platform.unknown.SearchTest"/>
+            <class name="esm.cases.audit.antivirus.networkkill.FileMonitorTest"/>
+            <class name="esm.cases.audit.antivirus.networkkill.MailMonitorTest"/>
+            <class name="esm.cases.audit.antivirus.networkkill.NoScanTest"/>
+            <class name="esm.cases.audit.antivirus.networkkill.OnlineStateTest"/>
+            <class name="esm.cases.audit.antivirus.networkkill.SearchTest"/>
         </classes>
 
     </test>

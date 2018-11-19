@@ -31,6 +31,7 @@ public class DataController {
         clientService.updateClientDay();
         clientService.updateClientWeek();
         clientService.updateClientMonth();
+        clientService.updateClientStatus();
         esmdbSession.commit();
     }
 
@@ -39,6 +40,7 @@ public class DataController {
 
         ScanEventService scanEventService = new ScanEventService(esmlogSession);
         scanEventService.updateTimelastWeek();
+        scanEventService.updateTimelastMonth();
         esmlogSession.commit();
     }
 

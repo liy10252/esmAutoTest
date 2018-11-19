@@ -15,7 +15,12 @@ public class ScanEventService {
 
 	//更新指定未扫描时间为上周
 	public void updateTimelastWeek(){
-		updateScanEventTime(TimeUtil.getLastWeekDate(),"290C002B-AD15-722D-13F0-7F695B683900");
+		updateScanEventTime(TimeUtil.getLastWeekDateForScan(),"290C002B-AD15-722D-13F0-7F695B683900");
+	}
+
+	//更新指定未扫描时间为上周
+	public void updateTimelastMonth(){
+		updateScanEventTime(TimeUtil.getLastMonthDate(),"290C002B-C745-46C8-2E08-1F790E43C700");
 	}
 
 	//更新指定client的扫描时间

@@ -27,8 +27,16 @@ public class ClientService {
 
     //更新指定client日期为上月
     public void updateClientMonth(){
-        updateUnknowClientTime(TimeUtil.getPMonthDate(),"WIN-2AL1RFMO553");
+        updateUnknowClientTime(TimeUtil.getLastMonthDate(),"WIN-2AL1RFMO553");
 
+    }
+
+    //修改指定computer的status
+    public void updateClientStatus(){
+        Client client = new Client();
+        client.setStatus(1);
+        client.setComputerName("WIN-DARB1NLQBLO");
+        session.update("updateClient",client);
     }
 
     //更新指定未知client日期字段

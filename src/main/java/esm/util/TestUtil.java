@@ -349,8 +349,7 @@ public class TestUtil {
 
 
 	public static WebElement waitForClick(WebElement element) {
-		return new WebDriverWait(driver, 6).until(ExpectedConditions.elementToBeClickable(element));
-
+		return new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(element));
 	}
 
 	// 切换到iframe的方法根据id

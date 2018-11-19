@@ -12,24 +12,44 @@ import org.testng.annotations.Test;
 public class SearchTest extends SeleniumTestCase {
 
 	NetWorkKillPage netWorkKillPage;
+	String count;
 
 	@Test(description = "全网查杀搜索条验证计算机名",retryAnalyzer = TestngRetry.class)
 	public void searchComputer(){
 
 		netWorkKillPage = new NetWorkKillPage(driver);
+		methodUtil(param.getString("computerName"),
+				netWorkKillPage.getComputerName(),By.xpath("./td[2]//span[2]"));
+	}
+
+	@Test(dependsOnMethods = "searchComputer",description = "全网查杀搜索条验证ip",retryAnalyzer = TestngRetry.class)
+	public void searchIp(){
+
+		methodUtil(param.getString("ip"),
+				netWorkKillPage.getIp(),By.xpath("./td[3]/div"));
+	}
+
+	@Test(dependsOnMethods = "searchComputer",description = "全网查杀搜索条验证病毒库版本",retryAnalyzer = TestngRetry.class)
+	public void searchvlibVer(){
+
+		methodUtil(param.getString("vlibVer"),
+				netWorkKillPage.getVlibVer(),By.xpath("./td[7]"));
 	}
 
 
-//	public void methodUtil(String text, WebElement element, By locator){
-//
-//		netWorkKillPage.getSearchBar().clear();
-//		netWorkKillPage.getSearchButton().click();
-//		netWorkKillPage.getSearchBar().sendKeys(text);
-//		element.click();
-//		netWorkKillPage.getSearchButton().click();
-//		TestUtil.waitForAttr(By.xpath("//tbody/tr[2]/td[7]"),"title","");
-//
-//		Assert.assertEquals(netWorkKillPage.getTr().findElement(locator)
-//				.getText(),text,"终端搜索条验证"+text+"错误");
-//	}
+	public void methodUtil(String text, WebElement element, By locator){
+
+		netWorkKillPage.getSearchBar().clear();
+		netWorkKillPage.getSearchButton().click();
+		count = netWorkKillPage.getCount().getText();
+
+		netWorkKillPage.getSearchBar().sendKeys(text);
+		TestUtil.waitForVisbility(element);
+		element.click();
+		netWorkKillPage.getSearchButton().click();
+		TestUtil.waitForChanges(By.id("assignPage_totalCount"), count);
+
+		Assert.assertEquals(TestUtil.waitForVisbility(netWorkKillPage.getTr()).findElement(locator)
+				.getText(),text,"全网查杀搜索条验证"+text+"错误");
+	}
 }
