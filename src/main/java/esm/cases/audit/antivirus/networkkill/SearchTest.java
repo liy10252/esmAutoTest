@@ -3,7 +3,6 @@ package esm.cases.audit.antivirus.networkkill;
 import esm.page.audit.antivirus.networkkill.NetWorkKillPage;
 import esm.util.SeleniumTestCase;
 import esm.util.TestUtil;
-import esm.util.TestngRetry;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -14,7 +13,7 @@ public class SearchTest extends SeleniumTestCase {
 	NetWorkKillPage netWorkKillPage;
 	String count;
 
-	@Test(description = "全网查杀搜索条验证计算机名",retryAnalyzer = TestngRetry.class)
+	@Test(description = "全网查杀搜索条验证计算机名")
 	public void searchComputer(){
 
 		netWorkKillPage = new NetWorkKillPage(driver);
@@ -22,14 +21,14 @@ public class SearchTest extends SeleniumTestCase {
 				netWorkKillPage.getComputerName(),By.xpath("./td[2]//span[2]"));
 	}
 
-	@Test(dependsOnMethods = "searchComputer",description = "全网查杀搜索条验证ip",retryAnalyzer = TestngRetry.class)
+	@Test(dependsOnMethods = "searchComputer",description = "全网查杀搜索条验证ip")
 	public void searchIp(){
 
 		methodUtil(param.getString("ip"),
 				netWorkKillPage.getIp(),By.xpath("./td[3]/div"));
 	}
 
-	@Test(dependsOnMethods = "searchComputer",description = "全网查杀搜索条验证病毒库版本",retryAnalyzer = TestngRetry.class)
+	@Test(dependsOnMethods = "searchComputer",description = "全网查杀搜索条验证病毒库版本")
 	public void searchvlibVer(){
 
 		methodUtil(param.getString("vlibVer"),

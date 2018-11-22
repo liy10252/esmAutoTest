@@ -3,7 +3,6 @@ package esm.cases.audit.platform.overview;
 import esm.page.audit.platform.overview.OverviewPage;
 import esm.util.SeleniumTestCase;
 import esm.util.TestUtil;
-import esm.util.TestngRetry;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -13,7 +12,7 @@ public class ManageDomainTest extends SeleniumTestCase {
 
     String count;
 
-    @Test(description = "终端管理范围验证",retryAnalyzer = TestngRetry.class)
+    @Test(description = "终端管理范围验证")
     public void ManageDomain(){
 
         OverviewPage overviewPage = new OverviewPage(driver);

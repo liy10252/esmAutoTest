@@ -3,7 +3,6 @@ package esm.cases.audit.antivirus.networkkill;
 import esm.page.audit.antivirus.networkkill.NetWorkKillPage;
 import esm.util.SeleniumTestCase;
 import esm.util.TestUtil;
-import esm.util.TestngRetry;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -14,14 +13,14 @@ public class OnlineStateTest extends SeleniumTestCase {
 	NetWorkKillPage netWorkKillPage;
 	String count;
 
-	@Test(description = "在线状态验证",retryAnalyzer = TestngRetry.class)
+	@Test(description = "在线状态验证")
 	public void onLine(){
 
 		netWorkKillPage = new NetWorkKillPage(driver);
 		methodUtil(netWorkKillPage.getOnLine(),expect.getBooleanValue("expect1"));
 	}
 
-	@Test(dependsOnMethods = "onLine",description = "在线状态验证",retryAnalyzer = TestngRetry.class)
+	@Test(dependsOnMethods = "onLine",description = "在线状态验证")
 	public void offLine(){
 
 		netWorkKillPage = new NetWorkKillPage(driver);

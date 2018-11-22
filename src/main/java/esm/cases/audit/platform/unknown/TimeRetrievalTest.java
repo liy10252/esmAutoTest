@@ -3,7 +3,6 @@ package esm.cases.audit.platform.unknown;
 import esm.page.audit.platform.unknown.UnknownPage;
 import esm.util.SeleniumTestCase;
 import esm.util.TestUtil;
-import esm.util.TestngRetry;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -14,7 +13,7 @@ public class TimeRetrievalTest extends SeleniumTestCase {
     UnknownPage unknownPage;
     String count;
 
-    @Test(description = "未知终端时间检索验证本周",retryAnalyzer = TestngRetry.class)
+    @Test(description = "未知终端时间检索验证本周")
     public void thisWeek(){
 
         unknownPage = new UnknownPage(driver);
@@ -23,20 +22,20 @@ public class TimeRetrievalTest extends SeleniumTestCase {
 
     }
 
-    @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证上周",retryAnalyzer = TestngRetry.class)
+    @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证上周")
     public void lastWeek(){
 
         methodUtil(unknownPage.getLastWeek(),expect.getString("lastWeek"));
 
     }
 
-    @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证本月",retryAnalyzer = TestngRetry.class)
+    @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证本月")
     public void thisMonth(){
 
         methodUtil(unknownPage.getThisMonth(),expect.getString("thisMonth"));
     }
 
-    @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证上月",retryAnalyzer = TestngRetry.class)
+    @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证上月")
     public void lastMonth(){
 
         unknownPage.getNoLimit().click();
@@ -50,7 +49,7 @@ public class TimeRetrievalTest extends SeleniumTestCase {
                 true,"未知终端时间检索验证错误");
     }
 
-    @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证指定日期",retryAnalyzer = TestngRetry.class)
+    @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证指定日期")
     public void special(){
 
         unknownPage.getNoLimit().click();

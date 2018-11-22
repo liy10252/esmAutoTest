@@ -3,7 +3,6 @@ package esm.cases.audit.platform.overview;
 import esm.page.audit.platform.overview.OverviewPage;
 import esm.util.SeleniumTestCase;
 import esm.util.TestUtil;
-import esm.util.TestngRetry;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -14,14 +13,14 @@ public class OnlineStateTest extends SeleniumTestCase {
     OverviewPage overviewPage;
     String count;
 
-    @Test(description = "终端在线状态验证为在线",retryAnalyzer = TestngRetry.class)
+    @Test(description = "终端在线状态验证为在线")
     public void onlineStateY() {
 
         overviewPage = new OverviewPage(driver);
         mothodUtil(overviewPage.getAlreadyLoginStatus(),param.getString("onlineY"),expect.getBooleanValue("expect1"));
     }
 
-    @Test(dependsOnMethods = "onlineStateY", description = "终端在线状态验证为离线",retryAnalyzer = TestngRetry.class)
+    @Test(dependsOnMethods = "onlineStateY", description = "终端在线状态验证为离线")
     public void onlineStateN() {
         mothodUtil(overviewPage.getNotLoginStatus(),param.getString("onlineN"),expect.getBooleanValue("expect2"));
     }

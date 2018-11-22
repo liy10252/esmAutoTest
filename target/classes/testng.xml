@@ -20,5 +20,6 @@
 
     <listeners>
         <listener class-name="esm.listener.ExtentTestNGIReporterListener"/>
+        <listener class-name="esm.listener.RetryListener"/>
     </listeners>
 </suite>

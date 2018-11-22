@@ -3,7 +3,6 @@ package esm.cases.audit.antivirus.networkkill;
 import esm.page.audit.antivirus.networkkill.NetWorkKillPage;
 import esm.util.SeleniumTestCase;
 import esm.util.TestUtil;
-import esm.util.TestngRetry;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -14,7 +13,7 @@ public class NoScanTest extends SeleniumTestCase {
 	NetWorkKillPage netWorkKillPage;
 	String count;
 
-	@Test(description = "未执行扫描验证",retryAnalyzer = TestngRetry.class)
+	@Test(description = "未执行扫描验证")
 	public void lastWeek(){
 
 		netWorkKillPage = new NetWorkKillPage(driver);
@@ -22,21 +21,21 @@ public class NoScanTest extends SeleniumTestCase {
 
 	}
 
-	@Test(dependsOnMethods = "lastWeek",description = "未执行扫描验证",retryAnalyzer = TestngRetry.class)
+	@Test(dependsOnMethods = "lastWeek",description = "未执行扫描验证")
 	public void lastMonth(){
 
 		methodUtil(netWorkKillPage.getLastMonth(),expect.getString("expect2"));
 
 	}
 
-	@Test(dependsOnMethods = "lastWeek",description = "未执行扫描验证",retryAnalyzer = TestngRetry.class)
+	@Test(dependsOnMethods = "lastWeek",description = "未执行扫描验证")
 	public void noScan(){
 
 		methodUtil(netWorkKillPage.getNoScan(),expect.getString("expect3"));
 
 	}
 
-	@Test(dependsOnMethods = "lastWeek",description = "未执行扫描验证",retryAnalyzer = TestngRetry.class)
+	@Test(dependsOnMethods = "lastWeek",description = "未执行扫描验证")
 	public void scanning(){
 
 		methodUtil(netWorkKillPage.getScanning(),expect.getString("expect4"));

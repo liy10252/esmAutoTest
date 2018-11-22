@@ -3,7 +3,6 @@ package esm.cases.audit.platform.unknown;
 import esm.page.audit.platform.unknown.UnknownPage;
 import esm.util.SeleniumTestCase;
 import esm.util.TestUtil;
-import esm.util.TestngRetry;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -14,7 +13,7 @@ public class SearchTest extends SeleniumTestCase {
     UnknownPage unknownPage;
     String count;
 
-    @Test(description = "未知终端搜索条验证",retryAnalyzer = TestngRetry.class)
+    @Test(description = "未知终端搜索条验证")
     public void searchComputer(){
 
         unknownPage = new UnknownPage(driver);
@@ -22,14 +21,14 @@ public class SearchTest extends SeleniumTestCase {
 
     }
 
-    @Test(dependsOnMethods = "searchComputer",description = "未知终端搜索条验证ip",retryAnalyzer = TestngRetry.class)
+    @Test(dependsOnMethods = "searchComputer",description = "未知终端搜索条验证ip")
     public void searchIp(){
 
         methodUtil(param.getString("ip"),unknownPage.getIp(),By.xpath("./td[2]/div"));
 
     }
 
-    @Test(dependsOnMethods = "searchComputer",description = "未知终端搜索条验证mac",retryAnalyzer = TestngRetry.class)
+    @Test(dependsOnMethods = "searchComputer",description = "未知终端搜索条验证mac")
     public void searchMac(){
 
         methodUtil(param.getString("mac"),unknownPage.getMac(),By.xpath("./td[3]/div"));
