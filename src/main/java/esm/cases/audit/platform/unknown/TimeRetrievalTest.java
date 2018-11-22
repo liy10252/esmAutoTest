@@ -54,8 +54,8 @@ public class TimeRetrievalTest extends SeleniumTestCase {
     public void special(){
 
         unknownPage.getNoLimit().click();
-        count = unknownPage.getCount().getText();
         unknownPage.getSpecial().click();
+        count = unknownPage.getCount().getText();
         unknownPage.getFromDateCalendar().click();
         unknownPage.getPrevMonth().click();
 
