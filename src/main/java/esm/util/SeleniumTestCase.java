@@ -38,8 +38,10 @@ public class SeleniumTestCase {
 		ScreenShot.caseName = caseName;
 		log.info("开始测试case:" + this.getClass().getSimpleName()
 				+ "----------");
-		driver.navigate().to(bundle.getString("url"));
-		moduleLogin(caseName);
+		String url = caseName.contains("audit")?
+				bundle.getString("auditurl"):bundle.getString("url");
+		driver.navigate().to(url);
+		moduleLogin(caseName,url);
 
 		param = TestCaseUtil.getParam(caseList,caseName);
 
@@ -56,22 +58,23 @@ public class SeleniumTestCase {
 	}
 
 
-	public void moduleLogin(String caseName){
+	public void moduleLogin(String caseName,String url){
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login();
 
-		try{
-			TestUtil.waitForTitle("安全中心 - 瑞星企业终端安全管理系统软件");
+		try {
+			if (url.contains("Audit")) {
+				TestUtil.waitForUrlContainsText("/Audit/Client/Client.aspx");
+			} else {
+				TestUtil.waitForTitle("安全中心 - 瑞星企业终端安全管理系统软件");
+			}
 		}catch(TimeoutException e){
-			loginPage.clear();
-			loginPage.login();
-		}
+				loginPage.clear();
+				loginPage.login();
+			}
 
-		ManageconsolePage p = new ManageconsolePage(driver);
 		if(caseName.contains("audit")){
-			p.gotoAudit();
-			TestUtil.switchWindow();
-			TestUtil.waitForUrlContainsText("/Audit/Client/Client.aspx");
+
 			AuditPlatformPage auditPlatformPage = new AuditPlatformPage(driver);
 			if(caseName.contains("platform")){
 				auditPlatformPage.gotoPlatform();
@@ -84,6 +87,8 @@ public class SeleniumTestCase {
 			if(caseName.contains("antivirus")){
 				auditPlatformPage.gotoAntivirus();
 			}
+		}else{
+			ManageconsolePage manageconsolePage = new ManageconsolePage(driver);
 		}
 
 	}

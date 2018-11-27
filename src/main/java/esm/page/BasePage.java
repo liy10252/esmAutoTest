@@ -12,7 +12,7 @@ public class BasePage {
 	public BasePage(EventFiringWebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, TIMEOUT), this);
-		
+//		PageFactory.initElements(driver,this);
 	}
    
 //	//返回元素

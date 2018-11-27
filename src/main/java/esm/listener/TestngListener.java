@@ -5,12 +5,11 @@ import lombok.extern.log4j.Log4j;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
-import org.testng.asserts.Assertion;
-
 import java.util.*;
 
 @Log4j
 public class TestngListener extends TestListenerAdapter {
+
 
 	@Override
 	public void onTestStart(ITestResult tr) {
