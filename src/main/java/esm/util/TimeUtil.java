@@ -7,8 +7,8 @@ public class TimeUtil {
    
 	static Date result;
 
-	//获取上周的日期
-	public static Date getLastWeekDate(){
+	//获取上周的日期往前推7天
+	public static Date getLastWeekDateR(){
 
 		Calendar ss = Calendar.getInstance();
 		ss.add(Calendar.DATE, -7);
@@ -22,14 +22,14 @@ public class TimeUtil {
 		
 		Calendar ss = Calendar.getInstance();
 		ss.add(Calendar.MONTH, -1);
-		ss.add(Calendar.DATE, -1);
+		ss.set(Calendar.DATE, 1);
 		result = ss.getTime();
 		
 		return result;
 	}
 
-	//获取上周的日期未扫描
-	public static Date getLastWeekDateForScan(){
+	//获取上周的日期超过7天
+	public static Date getLastWeekDateL(){
 
 		Calendar ss = Calendar.getInstance();
 		ss.add(Calendar.DATE, -8);

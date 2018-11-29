@@ -12,71 +12,25 @@
             <if test="null != Time">
                 Time=#{Time},
             </if>
-            <if test="null != EventType">
-                EventType=#{EventType},
-            </if>
-            <if test="null != EventLevel">
-                EventLevel=#{EventLevel},
-            </if>
-            <if test="null != EventSource and '' !=EventSource">
-                EventSource=#{EventSource},
-            </if>
-            <if test="null != Category">
-                Category=#{Category},
-            </if>
-            <if test="null != UserName and '' !=UserName">
-                UserName=#{UserName},
-            </if>
+
             <if test="null != GUID and '' !=GUID">
                 GUID=#{GUID},
             </if>
-            <if test="null != Description and '' !=Description">
-                Description=#{Description},
+
+        </trim>
+        ;
+    </update>
+
+    <update id="updateVirus" parameterType="esm.model.esmlog.XAV_Virus">
+        update XAV_Virus
+
+        <trim prefix="set" suffixOverrides="," suffix=" where GUID = #{GUID} ">
+            <if test="null != Time">
+                Time=#{Time},
             </if>
-            <if test="null != taskid">
-                taskid=#{taskid},
-            </if>
-            <if test="null != taskname and '' !=taskname">
-                taskname=#{taskname},
-            </if>
-            <if test="null != appid">
-                appid=#{appid},
-            </if>
-            <if test="null != starttime">
-                starttime=#{starttime},
-            </if>
-            <if test="null != runtime">
-                runtime=#{runtime},
-            </if>
-            <if test="null != state">
-                state=#{state},
-            </if>
-            <if test="null != scanCount">
-                scanCount=#{scanCount},
-            </if>
-            <if test="null != virusCount and '' !=virusCount">
-                virusCount=#{virusCount},
-            </if>
-            <if test="null != treatedCount">
-                treatedCount=#{treatedCount},
-            </if>
-            <if test="null != totalFileCount">
-                totalFileCount=#{totalFileCount},
-            </if>
-            <if test="null != scanFileCount">
-                scanFileCount=#{scanFileCount},
-            </if>
-            <if test="null != virusFielCount">
-                virusFielCount=#{virusFielCount},
-            </if>
-            <if test="null != treatedFileCount">
-                treatedFileCount=#{treatedFileCount},
-            </if>
-            <if test="null != reserve">
-                reserve=#{reserve},
-            </if>
-            <if test="null != virusFileCount">
-                virusFileCount=#{virusFileCount},
+
+            <if test="null != GUID and '' !=GUID">
+                GUID=#{GUID},
             </if>
 
         </trim>

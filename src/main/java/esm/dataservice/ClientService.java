@@ -21,7 +21,7 @@ public class ClientService {
 
     //更新指定client日期为上周
     public void updateClientWeek(){
-        updateUnknowClientTime(TimeUtil.getLastWeekDate(),"WIN-2AL1RFMO552");
+        updateUnknowClientTime(TimeUtil.getLastWeekDateR(),"WIN-2AL1RFMO552");
 
     }
 

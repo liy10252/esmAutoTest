@@ -3,10 +3,11 @@ package esm.datacontroller;
 import esm.dataservice.CasesService;
 import esm.dataservice.ClientService;
 import esm.dataservice.ScanEventService;
+import esm.dataservice.VirusService;
 import esm.model.testcase.Cases;
 import esm.util.DatabaseUtil;
 import org.apache.ibatis.session.SqlSession;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.util.List;
 
 public class DataController {
@@ -42,6 +43,25 @@ public class DataController {
         scanEventService.updateTimelastWeek();
         scanEventService.updateTimelastMonth();
         esmlogSession.commit();
+    }
+
+    @Test
+    public void updateVirus(){
+
+        VirusService virusService = new VirusService(esmlogSession);
+        virusService.updateTimeDay();
+        virusService.updateTimelastMonth();
+        virusService.updateTimelastWeek();
+        esmlogSession.commit();
+
+    }
+
+
+    @AfterClass
+    public void tearDown(){
+
+        esmdbSession.close();
+        esmlogSession.close();
     }
 
 
