@@ -7,29 +7,29 @@ import java.util.Date;
 @Data
 public class XAV_ScanEvent {
 
-	private int id;
+	private Integer id;
 	private Date Time;
-	private int EventType;
-	private int EventLevel;
+	private Integer EventType;
+	private Integer EventLevel;
 	private String EventSource;
-	private int Category;
+	private Integer Category;
 	private String UserName;
 	private String GUID;
 	private String Description;
-	private int taskid;
+	private Integer taskid;
 	private String taskname;
-	private int appid;
+	private Integer appid;
 	private Date starttime;
-	private int runtime;
-	private int state;
-	private int scanCount;
-	private int virusCount;
-	private int treatedCount;
-	private int totalFileCount;
-	private int scanFileCount;
-	private int virusFielCount;
-	private int treatedFileCount;
-	private int reserve;
-	private int virusFileCount;
+	private Integer runtime;
+	private Integer state;
+	private Integer scanCount;
+	private Integer virusCount;
+	private Integer treatedCount;
+	private Integer totalFileCount;
+	private Integer scanFileCount;
+	private Integer virusFielCount;
+	private Integer treatedFileCount;
+	private Integer reserve;
+	private Integer virusFileCount;
 
 }

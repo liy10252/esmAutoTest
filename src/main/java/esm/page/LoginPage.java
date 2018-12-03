@@ -1,13 +1,13 @@
 package esm.page;
 
-import org.apache.log4j.Logger;
+import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
+@Log4j
 public class LoginPage extends BasePage{
 
-    private static Logger logger = Logger.getLogger(LoginPage.class);
 
     @FindBy(id = "txtUserName")
     private WebElement userName;
@@ -27,7 +27,7 @@ public class LoginPage extends BasePage{
         userName.sendKeys("admin");
         passWord.sendKeys("rising123");
         loginBtn.click();
-        logger.info("用户已登陆------");
+        log.info("用户已登陆------");
     }
 
     public void clear(){

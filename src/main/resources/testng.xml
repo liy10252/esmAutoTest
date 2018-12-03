@@ -14,6 +14,11 @@
             <class name="esm.cases.audit.antivirus.networkkill.NoScanTest"/>
             <class name="esm.cases.audit.antivirus.networkkill.OnlineStateTest"/>
             <class name="esm.cases.audit.antivirus.networkkill.SearchTest"/>
+            <class name="esm.cases.audit.antivirus.virusdetails.TimeFrameTest"/>
+            <class name="esm.cases.audit.antivirus.virusdetails.SourceTest"/>
+            <class name="esm.cases.audit.antivirus.virusdetails.StateTest"/>
+            <class name="esm.cases.audit.antivirus.virusdetails.SearchTest"/>
+            <class name="esm.cases.audit.antivirus.virusdetails.VirusKillTest"/>
         </classes>
 
     </test>

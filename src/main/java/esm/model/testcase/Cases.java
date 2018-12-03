@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Cases {
 
-	private int id;
+	private Integer id;
 	private String casename;
 	private String param;
 	private String expect;

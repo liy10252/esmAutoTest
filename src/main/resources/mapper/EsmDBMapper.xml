@@ -22,6 +22,10 @@
                 ComputerName=#{ComputerName},
             </if>
 
+            <if test="null != Status">
+                Status=#{Status},
+            </if>
+
             <if test="null != CreateTime">
                 CreateTime=#{CreateTime},
             </if>

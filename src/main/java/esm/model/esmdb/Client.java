@@ -15,21 +15,21 @@ public class Client {
     private String OS;
     private String Version;
     private String GroupGUID;
-    private int Status;
+    private Integer Status;
     private String LastServerGUID;
     private String LastLoginAccount;
     private Date LastLoginTime;
-    private int GroupType;
-    private int NodeType;
-    private int SourceType;
+    private Integer GroupType;
+    private Integer NodeType;
+    private Integer SourceType;
     private String CreatorGUID;
     private Date CreateTime;
     private String ModifierGUID;
     private Date ModifyTime;
-    private int Deleted;
-    private int Accredited;
-    private int ReBoot;
-    private int IsVD;
+    private Integer Deleted;
+    private Integer Accredited;
+    private Integer ReBoot;
+    private Integer IsVD;
     private String SynSource;
 
 }

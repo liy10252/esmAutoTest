@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.util.*;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -174,6 +176,19 @@ public class TestUtil {
 		}));
 	}
 
+	// 智能等待元素文本改变，等待15秒，到时间没找到抛出异常，catch变动异常
+	public static void waitForChanges(WebElement element,String oldStr) {
+
+		Wait<WebDriver> wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.refreshed(new ExpectedCondition<Boolean>() {
+			@Override
+			public Boolean apply(WebDriver driver) {
+				String newStr = element.getText();
+				return !oldStr.equals(newStr);
+			}
+		}));
+	}
+
 	public static void waitFortextToElement(By locator, String text)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 5);
@@ -314,6 +329,10 @@ public class TestUtil {
 	public static WebElement waitForVisbility(WebElement element) {
 
 		return new WebDriverWait(driver, 6).until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(element)));
+	}
+
+	public static void waitForVisbilitys(List<WebElement> list){
+		ExpectedConditions.refreshed(ExpectedConditions.visibilityOfAllElements(list));
 	}
 
 	public static boolean waitForinvisibility(WebElement element) {
@@ -572,6 +591,20 @@ public class TestUtil {
 			}
 		}
 		return false;
+	}
+
+	//jsonarray转List
+	public static List<String> JsonToList(JSONArray jsonArray, String key){
+
+		List<String> list = new ArrayList<String>();
+
+		if(!jsonArray.isEmpty()){
+			for(int i=0;i<jsonArray.size();i++){
+				list.add(jsonArray.getJSONObject(i).getString(key));
+			}
+		}
+
+		return list;
 	}
 
 //	public static String ipTypeChange(long ip){

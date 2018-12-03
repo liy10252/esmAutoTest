@@ -10,6 +10,7 @@ import esm.model.testcase.Cases;
 import esm.page.LoginPage;
 import esm.page.ManageconsolePage;
 import esm.page.audit.AuditPlatformPage;
+import esm.page.audit.antivirus.AntivirusPage;
 import esm.page.audit.platform.PlatformPage;
 import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.TimeoutException;
@@ -86,6 +87,10 @@ public class SeleniumTestCase {
 
 			if(caseName.contains("antivirus")){
 				auditPlatformPage.gotoAntivirus();
+				if(caseName.contains("virusdetails")){
+					AntivirusPage antivirusPage = new AntivirusPage(driver);
+					antivirusPage.gotovirusDetails();
+				}
 			}
 		}else{
 			ManageconsolePage manageconsolePage = new ManageconsolePage(driver);

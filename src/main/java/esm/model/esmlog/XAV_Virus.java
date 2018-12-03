@@ -6,26 +6,26 @@ import java.util.Date;
 @Data
 public class XAV_Virus {
 
-	private int id;
+	private Integer id;
 	private Date Time;
-	private int EventType;
-	private int EventLevel;
+	private Integer EventType;
+	private Integer EventLevel;
 	private String EventSource;
-	private int Category;
+	private Integer Category;
 	private String UserName;
 	private String GUID;
 	private String Description;
 	private long UniqueValue;
-	private int taskid;
+	private Integer taskid;
 	private String taskname;
-	private int appid;
+	private Integer appid;
 	private Date findtime;
 	private String filepath;
-	private int virusid;
-	private int engid;
-	private int virusclass;
+	private Integer virusid;
+	private Integer engid;
+	private Integer virusclass;
 	private String virusname;
-	private int treatmethod;
-	private int state;
+	private Integer treatmethod;
+	private Integer state;
 	private long ParentID;
 }
