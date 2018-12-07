@@ -54,17 +54,17 @@ public class BasePage {
 	}
 
 	//时间范围验证通用工具方法
-	public void timeFrameTool(WebElement element){
+	public void timeFrameTool(WebElement element) {
 
 		timeUnlimited.click();
 		counts = count.getText();
 		element.click();
-		TestUtil.waitForChanges(count,counts);
+		TestUtil.waitForChanges(count, counts);
 		TestUtil.seleniumWait();
 	}
 
 	//时间范围指定时间工具
-	public void specialTool(){
+	public void specialTool() {
 
 		timeUnlimited.click();
 		special.click();
@@ -75,19 +75,19 @@ public class BasePage {
 		TestUtil.waitForVisbility(By.className("goToday"));
 		dateItem.click();
 
-		TestUtil.waitForChanges(count,counts);
+		TestUtil.waitForChanges(count, counts);
 		TestUtil.seleniumWait();
 
 	}
 
 
 	//单选功能第一个参数是不限，第二个是要操作的对象
-	public void singleClickTool(WebElement unlimited,WebElement element){
+	public void singleClickTool(WebElement unlimited, WebElement element) {
 
 		unlimited.click();
 		counts = count.getText();
 		element.click();
-		TestUtil.waitForChanges(count,counts);
+		TestUtil.waitForChanges(count, counts);
 	}
 
 }

@@ -19,6 +19,11 @@
             <class name="esm.cases.audit.antivirus.virusdetails.StateTest"/>
             <class name="esm.cases.audit.antivirus.virusdetails.SearchTest"/>
             <class name="esm.cases.audit.antivirus.virusdetails.VirusKillTest"/>
+            <class name="esm.cases.audit.antivirus.systemstrengthen.TimeFrameTest"/>
+            <class name="esm.cases.audit.antivirus.systemstrengthen.ProtectionTypeTest"/>
+            <class name="esm.cases.audit.antivirus.systemstrengthen.OnlineStateTest"/>
+            <class name="esm.cases.audit.antivirus.systemstrengthen.SearchTest"/>
+            <class name="esm.cases.audit.antivirus.systemstrengthen.SystemReinforcementTest"/>
         </classes>
 
     </test>

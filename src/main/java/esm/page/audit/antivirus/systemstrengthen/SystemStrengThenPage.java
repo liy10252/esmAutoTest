@@ -1,6 +1,7 @@
 package esm.page.audit.antivirus.systemstrengthen;
 
 import esm.page.BasePage;
+import esm.util.TestUtil;
 import lombok.Data;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -58,34 +59,20 @@ public class SystemStrengThenPage extends BasePage {
 	@FindBy(xpath = "//div[@id='tableBox1']//tr/td[not(1 and @*)]")
 	private List<WebElement> riskValues;
 
-	@FindBy(xpath = "//div[@id='tableBox1']//tbody/tr[1]/td[2]/a")
-	private WebElement riskNumber;
-
-	@FindBy(xpath = "//table[@id='dialogTableContent1']//tr[1]")
-	private WebElement riskTr;
-
-	@FindBy(xpath = "//div[@class='iDialogBody']//a[@class='OpSource']")
-	private WebElement source;
-
-	@FindBy(xpath = "//div[@class='iDialogBody']//a[@class='OpObj']")
-	private WebElement target;
-
-	@FindBy(xpath = "//div[@class='iDialogBody']//a[@class='Action']")
-	private WebElement action;
-
-	@FindBy(xpath = "//div[@class='iDialogHead']/following-sibling::a")
-	private WebElement riskClose;
-
-	@FindBy(xpath = "//div[@id='tableBox1']//tbody/tr[1]/td[3]/a")
-	private WebElement clientNumber;
-
-	@FindBy(xpath = "//table[@id='dialogTableContent2']//tr[1]/td[1]/a")
-	private WebElement clientName;
-
-	@FindBy(xpath = "//table[@id='dialogTableContent2']//tr[1]/td[2]")
-	private WebElement ipStr;
+	String webCount;
 
 	public SystemStrengThenPage(EventFiringWebDriver driver){
 		super(driver);
+	}
+
+	public void searchUtil(WebElement element,String text){
+
+		searchBar.clear();
+		searchButton.click();
+		webCount = count.getText();
+		searchBar.sendKeys(text);
+		element.click();
+		searchButton.click();
+		TestUtil.waitForChanges(count,webCount);
 	}
 }
