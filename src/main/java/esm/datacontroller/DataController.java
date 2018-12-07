@@ -1,9 +1,10 @@
 package esm.datacontroller;
 
 import esm.dataservice.CasesService;
-import esm.dataservice.ClientService;
-import esm.dataservice.ScanEventService;
-import esm.dataservice.VirusService;
+import esm.dataservice.esmdb.ClientService;
+import esm.dataservice.esmlog.ScanEventService;
+import esm.dataservice.esmlog.SysDefService;
+import esm.dataservice.esmlog.VirusService;
 import esm.model.testcase.Cases;
 import esm.util.DatabaseUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -25,7 +26,7 @@ public class DataController {
         caseSession.close();
     }
 
-    @Test
+    @Test(description = "更新未知客户端的创建时间")
     public void updateClient(){
 
         ClientService clientService= new ClientService(esmdbSession);
@@ -36,7 +37,7 @@ public class DataController {
         esmdbSession.commit();
     }
 
-    @Test
+    @Test(description = "更新全网查杀日志时间")
     public void updateScanEvent(){
 
         ScanEventService scanEventService = new ScanEventService(esmlogSession);
@@ -45,15 +46,25 @@ public class DataController {
         esmlogSession.commit();
     }
 
-    @Test
+    @Test(description = "更新病毒详情日志时间")
     public void updateVirus(){
 
         VirusService virusService = new VirusService(esmlogSession);
         virusService.updateTimeDay();
-        virusService.updateTimelastMonth();
         virusService.updateTimelastWeek();
+        virusService.updateTimelastMonth();
         esmlogSession.commit();
 
+    }
+
+    @Test(description = "更新系统加固日志时间")
+    public void updateSysDef(){
+
+        SysDefService sysDefService = new SysDefService(esmlogSession);
+        sysDefService.updateTimeDay();
+        sysDefService.updateTimelastWeek();
+        sysDefService.updateTimelastMonth();
+        esmlogSession.commit();
     }
 
 

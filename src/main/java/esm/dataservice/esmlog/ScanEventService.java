@@ -1,4 +1,4 @@
-package esm.dataservice;
+package esm.dataservice.esmlog;
 
 import esm.model.esmlog.XAV_ScanEvent;
 import esm.util.TimeUtil;
@@ -18,7 +18,7 @@ public class ScanEventService {
 		updateScanEventTime(TimeUtil.getLastWeekDateL(),"290C002B-AD15-722D-13F0-7F695B683900");
 	}
 
-	//更新指定未扫描时间为上周
+	//更新指定未扫描时间为上月
 	public void updateTimelastMonth(){
 		updateScanEventTime(TimeUtil.getLastMonthDate(),"290C002B-C745-46C8-2E08-1F790E43C700");
 	}

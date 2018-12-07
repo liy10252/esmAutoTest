@@ -607,6 +607,17 @@ public class TestUtil {
 		return list;
 	}
 
+	//元素集合转字符串集合
+	public static List<String> getValueList(List<WebElement> values){
+
+		List<String> list = new ArrayList<String>();
+
+		for(WebElement element : values){
+			list.add(element.getText());
+		}
+		return list;
+	}
+
 //	public static String ipTypeChange(long ip){
 //
 //		byte[] result = new byte[4];

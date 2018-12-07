@@ -36,4 +36,20 @@
         </trim>
         ;
     </update>
+
+    <update id="updateSysDef" parameterType="esm.model.esmlog.XAV_SysDef">
+        update XAV_SysDef
+
+        <trim prefix="set" suffixOverrides="," suffix=" where GUID = #{GUID} ">
+            <if test="null != Time">
+                Time=#{Time},
+            </if>
+
+            <if test="null != GUID and '' !=GUID">
+                GUID=#{GUID},
+            </if>
+
+        </trim>
+        ;
+    </update>
 </mapper>

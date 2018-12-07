@@ -14,12 +14,12 @@ public class VirusKillTest extends SeleniumTestCase {
 	public void showVirus(){
 		virusDetailsPage = new VirusDetailsPage(driver);
 		virusDetailsPage.getTimeUnlimited().click();
-		Assert.assertEquals(virusDetailsPage.getValueList(virusDetailsPage.getValues()).containsAll(TestUtil.JsonToList((expect.getJSONArray("virusName")),"name")),true,"病毒查杀验证错误");
+		Assert.assertEquals(TestUtil.getValueList(virusDetailsPage.getValues()).containsAll(TestUtil.JsonToList((expect.getJSONArray("virusName")),"name")),true,"病毒查杀验证错误");
 	}
 
 	@Test(dependsOnMethods = "showVirus",description = "按客户端显示验证")
 	public void showClient(){
 		virusDetailsPage.getShowClient().click();
-		Assert.assertEquals(virusDetailsPage.getValueList(virusDetailsPage.getClientvalues()).containsAll(TestUtil.JsonToList((expect.getJSONArray("clientName")),"name")),true,"病毒查杀验证错误");
+		Assert.assertEquals(TestUtil.getValueList(virusDetailsPage.getClientvalues()).containsAll(TestUtil.JsonToList((expect.getJSONArray("clientName")),"name")),true,"病毒查杀验证错误");
 	}
 }

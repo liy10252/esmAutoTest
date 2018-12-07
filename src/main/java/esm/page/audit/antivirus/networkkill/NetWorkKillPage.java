@@ -1,6 +1,7 @@
 package esm.page.audit.antivirus.networkkill;
 
 import esm.page.BasePage;
+import esm.util.TestUtil;
 import lombok.Data;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -20,9 +21,6 @@ public class NetWorkKillPage extends BasePage {
 
 	@FindBy(xpath = "//dd[@id='searchFileMon']//a[text()='关闭']")
 	private WebElement fileClose;
-
-	@FindBy(id = "assignPage_totalCount")
-	private WebElement count;
 
 	@FindBy(xpath = "//div[@id='tableBox1']//tbody/tr[1]/td[4]/span")
 	private WebElement fileStatus;
@@ -87,7 +85,20 @@ public class NetWorkKillPage extends BasePage {
 	@FindBy(xpath = "//div[@id='tableBox1']//tbody/tr[1]/td[2]//img")
 	private WebElement onLineStatus;
 
+	String webCount;
+
 	public NetWorkKillPage(EventFiringWebDriver driver) {
 		super(driver);
+	}
+
+	public void searchUtil(WebElement element,String text){
+
+		searchBar.clear();
+		searchButton.click();
+		webCount = count.getText();
+		searchBar.sendKeys(text);
+		element.click();
+		searchButton.click();
+		TestUtil.waitForChanges(count,webCount);
 	}
 }

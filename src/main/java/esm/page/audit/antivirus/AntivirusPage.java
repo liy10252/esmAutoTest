@@ -15,6 +15,9 @@ public class AntivirusPage extends BasePage {
 	@FindBy(id = "__virusStat")
 	private WebElement virusDetails;
 
+	@FindBy(id = "__systemStrengthened")
+	private WebElement systemStrengthen;
+
 	public AntivirusPage(EventFiringWebDriver driver) {
 		super(driver);
 	}
@@ -23,6 +26,12 @@ public class AntivirusPage extends BasePage {
 	public void gotovirusDetails(){
 		virusDetails.click();
 		log.info("进入病毒详情模块------");
+	}
+
+	//进入系统加固模块
+	public void gotoSystemStrengthen(){
+		systemStrengthen.click();
+		log.info("进入系统加固模块------");
 	}
 
 }

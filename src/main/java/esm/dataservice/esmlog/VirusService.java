@@ -1,4 +1,4 @@
-package esm.dataservice;
+package esm.dataservice.esmlog;
 
 import esm.model.esmlog.XAV_Virus;
 import esm.util.TimeUtil;

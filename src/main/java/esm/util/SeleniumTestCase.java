@@ -70,9 +70,9 @@ public class SeleniumTestCase {
 				TestUtil.waitForTitle("安全中心 - 瑞星企业终端安全管理系统软件");
 			}
 		}catch(TimeoutException e){
-				loginPage.clear();
-				loginPage.login();
-			}
+			loginPage.clear();
+			loginPage.login();
+		}
 
 		if(caseName.contains("audit")){
 
@@ -87,9 +87,11 @@ public class SeleniumTestCase {
 
 			if(caseName.contains("antivirus")){
 				auditPlatformPage.gotoAntivirus();
+				AntivirusPage antivirusPage = new AntivirusPage(driver);
 				if(caseName.contains("virusdetails")){
-					AntivirusPage antivirusPage = new AntivirusPage(driver);
 					antivirusPage.gotovirusDetails();
+				}else if(caseName.contains("systemstrengthen")){
+					antivirusPage.gotoSystemStrengthen();
 				}
 			}
 		}else{

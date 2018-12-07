@@ -1,7 +1,9 @@
 package esm.page.audit.platform.overview;
 
 import esm.page.BasePage;
+import esm.util.TestUtil;
 import lombok.Data;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -57,10 +59,20 @@ public class OverviewPage extends BasePage {
     @FindBy(xpath = "//dd[@id='searchBox']//a")
     private WebElement searchButton;
 
-    @FindBy(id = "assignPage_totalCount")
-    private WebElement count;
+    String webCount;
 
     public OverviewPage(EventFiringWebDriver driver) {
         super(driver);
+    }
+
+    public void searchUtil(WebElement element,String text){
+
+        searchBar.clear();
+        searchButton.click();
+        webCount = count.getText();
+        searchBar.sendKeys(text);
+        element.click();
+        searchButton.click();
+        TestUtil.waitForAttr(By.xpath("//tbody/tr[2]/td[7]"),"title","");
     }
 }
