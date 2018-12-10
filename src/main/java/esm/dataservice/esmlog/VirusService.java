@@ -20,7 +20,7 @@ public class VirusService {
 
 	//更新指定virus时间为上周
 	public void updateTimelastWeek(){
-		updateVirusTime(TimeUtil.getLastWeekDateL(),"290C002B-C745-46C8-2E08-1F790E43C700");
+		updateVirusTime(TimeUtil.getLastWeekDateR(),"290C002B-C745-46C8-2E08-1F790E43C700");
 	}
 
 	//更新指定virus时间为上月

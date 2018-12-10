@@ -20,7 +20,7 @@ public class SysDefService {
 
 	//更新指定SysDef时间为上周
 	public void updateTimelastWeek(){
-		updateSysDefTime(TimeUtil.getLastWeekDateL(),"290C002B-C745-46C8-2E08-1F790E43C700");
+		updateSysDefTime(TimeUtil.getLastWeekDateR(),"290C002B-C745-46C8-2E08-1F790E43C700");
 	}
 
 	//更新指定SysDef时间为上月

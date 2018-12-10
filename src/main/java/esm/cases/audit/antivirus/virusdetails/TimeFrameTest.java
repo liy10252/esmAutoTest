@@ -27,7 +27,7 @@ public class TimeFrameTest extends SeleniumTestCase{
 	@Test(dependsOnMethods = "thisWeek",description = "时间范围本月验证")
 	public void thisMonth(){
 		virusDetailsPage.timeFrameTool(virusDetailsPage.getThisMonth());
-		Assert.assertEquals(virusDetailsPage.getValue().getText().equals(expect.getString("thisMonth")),true,"时间范围验证错误");
+		Assert.assertEquals(TestUtil.getValueList(virusDetailsPage.getValues()).contains(expect.getString("thisMonth")),true,"时间范围验证错误");
 	}
 
 	@Test(dependsOnMethods = "thisWeek",description = "时间范围上月验证")
