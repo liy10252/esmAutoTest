@@ -52,4 +52,36 @@
         </trim>
         ;
     </update>
+
+    <update id="updateUrlInter" parameterType="esm.model.esmlog.RFW_UrlInterceptLog">
+        update RFW_UrlInterceptLog
+
+        <trim prefix="set" suffixOverrides="," suffix=" where GUID = #{GUID} ">
+            <if test="null != Time">
+                Time=#{Time},
+            </if>
+
+            <if test="null != GUID and '' !=GUID">
+                GUID=#{GUID},
+            </if>
+
+        </trim>
+        ;
+    </update>
+
+    <update id="updateIpAccess" parameterType="esm.model.esmlog.RFW_IPAccessAuditLog">
+        update RFW_IPAccessAuditLog
+
+        <trim prefix="set" suffixOverrides="," suffix=" where GUID = #{GUID} ">
+            <if test="null != Time">
+                Time=#{Time},
+            </if>
+
+            <if test="null != GUID and '' !=GUID">
+                GUID=#{GUID},
+            </if>
+
+        </trim>
+        ;
+    </update>
 </mapper>

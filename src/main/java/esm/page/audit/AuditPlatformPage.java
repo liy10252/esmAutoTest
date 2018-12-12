@@ -15,6 +15,9 @@ public class AuditPlatformPage extends BasePage {
     @FindBy(xpath = "//ul[@id='topMenu']//span[text()='防病毒']")
     private WebElement antivirusLink;
 
+    @FindBy(xpath = "//ul[@id='topMenu']//span[text()='防火墙']")
+    private WebElement fireWallLink;
+
     public AuditPlatformPage(EventFiringWebDriver driver) {
         super(driver);
     }
@@ -27,5 +30,10 @@ public class AuditPlatformPage extends BasePage {
     public void gotoAntivirus(){
         antivirusLink.click();
         log.info("进入防病毒模块------");
+    }
+
+    public void gotoFireWall(){
+        fireWallLink.click();
+        log.info("进入防火墙模块------");
     }
 }

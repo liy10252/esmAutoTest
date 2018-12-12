@@ -600,7 +600,7 @@ public class TestUtil {
 
 		if(!jsonArray.isEmpty()){
 			for(int i=0;i<jsonArray.size();i++){
-				list.add(jsonArray.getJSONObject(i).getString(key));
+				list.add(jsonArray.getJSONObject(i).getString(key).trim());
 			}
 		}
 
@@ -613,7 +613,7 @@ public class TestUtil {
 		List<String> list = new ArrayList<String>();
 
 		for(WebElement element : values){
-			list.add(element.getText());
+			list.add(element.getText().trim());
 		}
 		return list;
 	}

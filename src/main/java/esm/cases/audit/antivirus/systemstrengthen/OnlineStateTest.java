@@ -23,6 +23,6 @@ public class OnlineStateTest extends SeleniumTestCase {
 	public void offLine(){
 
 		strengThenPage.singleClickTool(strengThenPage.getOnlineUnlimited(),strengThenPage.getOffline());
-		Assert.assertEquals(TestUtil.getValueList(strengThenPage.getClientValues()).containsAll(TestUtil.JsonToList((expect.getJSONArray("offline")),"name")),true,"在线状态验证错误");
+		Assert.assertEquals(TestUtil.getValueList(strengThenPage.getClientValues()).containsAll(TestUtil.JsonToList((expect.getJSONArray("offline")),"name")),true,"离线状态验证错误");
 	}
 }

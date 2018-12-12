@@ -24,6 +24,12 @@
             <class name="esm.cases.audit.antivirus.systemstrengthen.OnlineStateTest"/>
             <class name="esm.cases.audit.antivirus.systemstrengthen.SearchTest"/>
             <class name="esm.cases.audit.antivirus.systemstrengthen.SystemReinforcementTest"/>
+            <class name="esm.cases.audit.firewall.maliciousweb.TimeFrameTest"/>
+            <class name="esm.cases.audit.firewall.maliciousweb.TypeTest"/>
+            <class name="esm.cases.audit.firewall.maliciousweb.SearchTest"/>
+            <class name="esm.cases.audit.firewall.hackerattack.TimeFrameTest"/>
+            <class name="esm.cases.audit.firewall.hackerattack.OnlineStateTest"/>
+            <class name="esm.cases.audit.firewall.hackerattack.SearchTest"/>
         </classes>
 
     </test>

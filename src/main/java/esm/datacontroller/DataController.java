@@ -2,9 +2,7 @@ package esm.datacontroller;
 
 import esm.dataservice.CasesService;
 import esm.dataservice.esmdb.ClientService;
-import esm.dataservice.esmlog.ScanEventService;
-import esm.dataservice.esmlog.SysDefService;
-import esm.dataservice.esmlog.VirusService;
+import esm.dataservice.esmlog.*;
 import esm.model.testcase.Cases;
 import esm.util.DatabaseUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -64,6 +62,26 @@ public class DataController {
         sysDefService.updateTimeDay();
         sysDefService.updateTimelastWeek();
         sysDefService.updateTimelastMonth();
+        esmlogSession.commit();
+    }
+
+    @Test(description = "更新恶意网址日志时间")
+    public void updateUrlInter(){
+
+        UrlInterService urlInterService = new UrlInterService(esmlogSession);
+        urlInterService.updateTimeDay();
+        urlInterService.updateTimelastWeek();
+        urlInterService.updateTimelastMonth();
+        esmlogSession.commit();
+    }
+
+    @Test(description = "更新黑客攻击日志时间")
+    public void updateIpAccess(){
+
+        IpAccessService ipAccessService = new IpAccessService(esmlogSession);
+        ipAccessService.updateTimeDay();
+        ipAccessService.updateTimelastWeek();
+        ipAccessService.updateTimelastMonth();
         esmlogSession.commit();
     }
 

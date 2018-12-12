@@ -11,6 +11,7 @@ import esm.page.LoginPage;
 import esm.page.ManageconsolePage;
 import esm.page.audit.AuditPlatformPage;
 import esm.page.audit.antivirus.AntivirusPage;
+import esm.page.audit.firewall.FireWallPage;
 import esm.page.audit.platform.PlatformPage;
 import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.TimeoutException;
@@ -93,6 +94,15 @@ public class SeleniumTestCase {
 				}else if(caseName.contains("systemstrengthen")){
 					antivirusPage.gotoSystemStrengthen();
 				}
+			}
+
+			if(caseName.contains("firewall")){
+				auditPlatformPage.gotoFireWall();
+				FireWallPage fireWallPage = new FireWallPage(driver);
+				if(caseName.contains("hackerattack")){
+					fireWallPage.gotoHackerAttack();
+				}
+
 			}
 		}else{
 			ManageconsolePage manageconsolePage = new ManageconsolePage(driver);
