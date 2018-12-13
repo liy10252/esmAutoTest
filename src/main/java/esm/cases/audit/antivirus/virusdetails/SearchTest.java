@@ -15,13 +15,13 @@ public class SearchTest extends SeleniumTestCase {
 		virusDetailsPage = new VirusDetailsPage(driver);
 		virusDetailsPage.getTimeUnlimited().click();
 		virusDetailsPage.searchUtil(virusDetailsPage.getVirusName(),param.getString("virusName"));
-		Assert.assertEquals(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("virusName")),true,"搜索条验证");
+		Assert.assertTrue(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("virusName")),"搜索条验证");
 	}
 
 	@Test(dependsOnMethods = "virusName",description = "染毒文件名验证")
 	public void filePath(){
 		virusDetailsPage.searchUtil(virusDetailsPage.getFilePath(),param.getString("filePath"));
-		Assert.assertEquals(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("filePath")),true,"搜索条验证");
+		Assert.assertTrue(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("filePath")),"搜索条验证");
 	}
 
 }

@@ -15,30 +15,30 @@ public class SourceTest extends SeleniumTestCase {
 		virusDetailsPage = new VirusDetailsPage(driver);
 		virusDetailsPage.getTimeUnlimited().click();
 		virusDetailsPage.singleClickTool(virusDetailsPage.getSourceUnlimited(),virusDetailsPage.getAllScan());
-		Assert.assertEquals(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("allScan")),true,"病毒来源验证错误");
+		Assert.assertTrue(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("allScan")),"病毒来源验证错误");
 	}
 
 	@Test(dependsOnMethods = "allScan",description = "快速查杀验证")
 	public void quickScan(){
 		virusDetailsPage.singleClickTool(virusDetailsPage.getSourceUnlimited(),virusDetailsPage.getQuickScan());
-		Assert.assertEquals(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("quickScan")),true,"病毒来源验证错误");
+		Assert.assertTrue(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("quickScan")),"病毒来源验证错误");
 	}
 
 	@Test(dependsOnMethods = "allScan",description = "自定义查杀验证")
 	public void customScan(){
 		virusDetailsPage.singleClickTool(virusDetailsPage.getSourceUnlimited(),virusDetailsPage.getCustomScan());
-		Assert.assertEquals(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("customScan")),true,"病毒来源验证错误");
+		Assert.assertTrue(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("customScan")),"病毒来源验证错误");
 	}
 
 	@Test(dependsOnMethods = "allScan",description = "文件监控验证")
 	public void fileMon(){
 		virusDetailsPage.singleClickTool(virusDetailsPage.getSourceUnlimited(),virusDetailsPage.getFilemon());
-		Assert.assertEquals(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("fileMon")),true,"病毒来源验证错误");
+		Assert.assertTrue(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("fileMon")),"病毒来源验证错误");
 	}
 
 	@Test(dependsOnMethods = "allScan",description = "邮件监控验证")
 	public void mailMon(){
 		virusDetailsPage.singleClickTool(virusDetailsPage.getSourceUnlimited(),virusDetailsPage.getMailmon());
-		Assert.assertEquals(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("mailMon")),true,"病毒来源验证错误");
+		Assert.assertTrue(TestUtil.waitForVisbility(virusDetailsPage.getValue()).getText().equals(expect.getString("mailMon")),"病毒来源验证错误");
 	}
 }

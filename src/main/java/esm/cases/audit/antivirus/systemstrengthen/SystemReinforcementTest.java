@@ -16,7 +16,7 @@ public class SystemReinforcementTest extends SeleniumTestCase {
 		strengThenPage = new SystemStrengThenPage(driver);
 		strengThenPage.getTimeUnlimited().click();
 		TestUtil.seleniumWait();
-		Assert.assertEquals(TestUtil.getValueList(strengThenPage.getClientValues()).containsAll(TestUtil.JsonToList((expect.getJSONArray("client")),"name")),true,"系统加固验证错误");
+		Assert.assertTrue(TestUtil.getValueList(strengThenPage.getClientValues()).containsAll(TestUtil.JsonToList((expect.getJSONArray("client")),"name")),"系统加固验证错误");
 
 	}
 
@@ -24,6 +24,6 @@ public class SystemReinforcementTest extends SeleniumTestCase {
 	public void showRisk(){
 
 		strengThenPage.getShowRisk().click();
-		Assert.assertEquals(TestUtil.getValueList(strengThenPage.getRiskValues()).containsAll(TestUtil.JsonToList((expect.getJSONArray("risk")),"name")),true,"系统加固验证错误");
+		Assert.assertTrue(TestUtil.getValueList(strengThenPage.getRiskValues()).containsAll(TestUtil.JsonToList((expect.getJSONArray("risk")),"name")),"系统加固验证错误");
 	}
 }

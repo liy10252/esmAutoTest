@@ -42,10 +42,9 @@ public class TimeRetrievalTest extends SeleniumTestCase {
 
         unknownPage.timeFrameTool(unknownPage.getLastMonth());
 
-        Assert.assertEquals(unknownPage.getTr().findElement(By.xpath("./td[1]//span[@class='memoColor']"))
+        Assert.assertTrue(unknownPage.getTr().findElement(By.xpath("./td[1]//span[@class='memoColor']"))
                         .getText().equals(expect.getString("lastMonth1")) || unknownPage.getTr().findElement(By.xpath("./td[1]//span[@class='memoColor']"))
-                        .getText().equals(expect.getString("lastMonth2")),
-                true,"未知终端时间检索验证错误");
+                        .getText().equals(expect.getString("lastMonth2")),"未知终端时间检索验证错误");
     }
 
     @Test(dependsOnMethods = "thisWeek",description = "未知终端时间检索验证指定日期")
