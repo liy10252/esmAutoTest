@@ -1,7 +1,6 @@
 package esm.page.audit.antivirus.virusdetails;
 
 import esm.page.BasePage;
-import esm.util.TestUtil;
 import lombok.Data;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

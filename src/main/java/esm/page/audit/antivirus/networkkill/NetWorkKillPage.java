@@ -1,14 +1,10 @@
 package esm.page.audit.antivirus.networkkill;
 
 import esm.page.BasePage;
-import esm.util.TestUtil;
 import lombok.Data;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-
-import javax.xml.xpath.XPath;
 
 @Data
 public class NetWorkKillPage extends BasePage {

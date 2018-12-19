@@ -1,7 +1,6 @@
 package esm.page;
 
 import lombok.extern.log4j.Log4j;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;

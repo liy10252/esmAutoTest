@@ -6,11 +6,9 @@ import com.aventstack.extentreports.model.TestAttribute;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import esm.util.ScreenShot;
 import org.testng.*;
 import org.testng.xml.XmlSuite;
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 public class ExtentTestNGIReporterListener implements IReporter {

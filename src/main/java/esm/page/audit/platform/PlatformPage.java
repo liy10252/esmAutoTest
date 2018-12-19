@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-import javax.xml.xpath.XPath;
-
 @Data
 @Log4j
 public class PlatformPage extends BasePage {
