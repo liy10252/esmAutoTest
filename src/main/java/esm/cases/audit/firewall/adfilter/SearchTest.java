@@ -1,9 +1,7 @@
 package esm.cases.audit.firewall.adfilter;
 
 import esm.page.audit.firewall.adfilter.AdFilterPage;
-import esm.page.audit.firewall.hackerattack.HackerAttackPage;
 import esm.util.SeleniumTestCase;
-import esm.util.TestUtil;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
