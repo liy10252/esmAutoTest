@@ -16,7 +16,8 @@ public class SearchTest extends SeleniumTestCase {
 
 		maliciousWebPage = new MaliciousWebPage(driver);
 		maliciousWebPage.getTimeUnlimited().click();
-		maliciousWebPage.searchUtil(maliciousWebPage.getWebSite(),expect.getString("webSite"));
+		maliciousWebPage.searchUtil(maliciousWebPage.getSearchBar(),
+				maliciousWebPage.getSearchButton(),maliciousWebPage.getWebSite(),expect.getString("webSite"));
 		Assert.assertEquals(TestUtil.waitForVisbility(maliciousWebPage.getValue()).findElement(By.xpath("./following-sibling::td[5]"))
 				.getText(),expect.getString("webSite"),"网址搜索条验证错误");
 	}
@@ -24,7 +25,8 @@ public class SearchTest extends SeleniumTestCase {
 	@Test(dependsOnMethods = "webSite",description = "域名搜索验证")
 	public void domain(){
 
-		maliciousWebPage.searchUtil(maliciousWebPage.getDomain(),expect.getString("domain"));
+		maliciousWebPage.searchUtil(maliciousWebPage.getSearchBar(),
+				maliciousWebPage.getSearchButton(),maliciousWebPage.getDomain(),expect.getString("domain"));
 		Assert.assertEquals(TestUtil.waitForVisbility(maliciousWebPage.getValue()).findElement(By.xpath("./following-sibling::td[4]"))
 				.getText(),expect.getString("domain"),"域名搜索条验证错误");
 	}

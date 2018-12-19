@@ -16,7 +16,8 @@ public class SearchTest extends SeleniumTestCase {
 
         unknownPage = new UnknownPage(driver);
         text = param.getString("computer");
-        unknownPage.searchUtil(unknownPage.getComputerName(),text);
+        unknownPage.searchUtil(unknownPage.getSearchBar(),
+                unknownPage.getSearchButton(),unknownPage.getComputerName(),text);
         Assert.assertEquals(unknownPage.getTr().findElement(By.xpath("./td[1]//span[@class='memoColor']"))
                 .getText(),text,"未知终端搜索条验证"+text+"错误");
 
@@ -26,7 +27,8 @@ public class SearchTest extends SeleniumTestCase {
     public void searchIp(){
 
         text = param.getString("ip");
-        unknownPage.searchUtil(unknownPage.getIp(),text);
+        unknownPage.searchUtil(unknownPage.getSearchBar(),
+                unknownPage.getSearchButton(),unknownPage.getIp(),text);
         Assert.assertEquals(unknownPage.getTr().findElement(By.xpath("./td[2]/div"))
                 .getText(),text,"未知终端搜索条验证"+text+"错误");
 
@@ -36,7 +38,8 @@ public class SearchTest extends SeleniumTestCase {
     public void searchMac(){
 
         text = param.getString("mac");
-        unknownPage.searchUtil(unknownPage.getMac(),text);
+        unknownPage.searchUtil(unknownPage.getSearchBar(),
+                unknownPage.getSearchButton(),unknownPage.getMac(),text);
         Assert.assertEquals(unknownPage.getTr().findElement(By.xpath("./td[3]/div"))
                 .getText(),text,"未知终端搜索条验证"+text+"错误");
     }

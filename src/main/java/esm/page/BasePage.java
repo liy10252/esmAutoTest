@@ -42,7 +42,7 @@ public class BasePage {
 	@FindBy(id = "assignPage_totalCount")
 	public WebElement count;
 
-	public String counts;
+	public String webCount;
 
 	EventFiringWebDriver driver;
 	private final int TIMEOUT = 10;
@@ -57,9 +57,9 @@ public class BasePage {
 	public void timeFrameTool(WebElement element) {
 
 		timeUnlimited.click();
-		counts = count.getText();
+		webCount = count.getText();
 		element.click();
-		TestUtil.waitForChanges(count, counts);
+		TestUtil.waitForChanges(count, webCount);
 		TestUtil.seleniumWait();
 	}
 
@@ -68,14 +68,14 @@ public class BasePage {
 
 		timeUnlimited.click();
 		special.click();
-		counts = count.getText();
+		webCount = count.getText();
 		fromDateCalendar.click();
 		prevMonth.click();
 
 		TestUtil.waitForVisbility(By.className("goToday"));
 		dateItem.click();
 
-		TestUtil.waitForChanges(count, counts);
+		TestUtil.waitForChanges(count, webCount);
 		TestUtil.seleniumWait();
 
 	}
@@ -85,9 +85,21 @@ public class BasePage {
 	public void singleClickTool(WebElement unlimited, WebElement element) {
 
 		unlimited.click();
-		counts = count.getText();
+		webCount = count.getText();
 		element.click();
-		TestUtil.waitForChanges(count, counts);
+		TestUtil.waitForChanges(count, webCount);
+	}
+
+	//搜索条操作第一个参数是搜索条元素，第二个参数是查询按钮，第三个参数是输入的文本
+	public void searchUtil(WebElement searchBar,WebElement searchButton,WebElement element,String text){
+
+		searchBar.clear();
+		searchButton.click();
+		webCount = count.getText();
+		searchBar.sendKeys(text);
+		element.click();
+		searchButton.click();
+		TestUtil.waitForChanges(count,webCount);
 	}
 
 }

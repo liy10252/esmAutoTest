@@ -38,20 +38,8 @@ public class HackerAttackPage extends BasePage {
 	@FindBy(xpath = "//div[@id='tableBox1']//tr/td[not(1 and @*)]")
 	private List<WebElement> values;
 
-	String webCount;
-
 	public HackerAttackPage(EventFiringWebDriver driver){
 		super(driver);
 	}
 
-	public void searchUtil(WebElement element,String text){
-
-		searchBar.clear();
-		searchButton.click();
-		webCount = count.getText();
-		searchBar.sendKeys(text);
-		element.click();
-		searchButton.click();
-		TestUtil.waitForChanges(count,webCount);
-	}
 }

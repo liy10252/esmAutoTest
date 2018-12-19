@@ -17,7 +17,8 @@ public class SearchTest extends SeleniumTestCase {
 
 		netWorkKillPage = new NetWorkKillPage(driver);
 		text = param.getString("computerName");
-		netWorkKillPage.searchUtil(netWorkKillPage.getComputerName(),text);
+		netWorkKillPage.searchUtil(netWorkKillPage.getSearchBar(),
+				netWorkKillPage.getSearchButton(),netWorkKillPage.getComputerName(),text);
 		Assert.assertEquals(TestUtil.waitForVisbility(netWorkKillPage.getTr()).findElement(By.xpath("./td[2]//span[2]"))
 				.getText(),text,"全网查杀搜索条验证"+text+"错误");
 	}
@@ -26,7 +27,8 @@ public class SearchTest extends SeleniumTestCase {
 	public void searchIp(){
 
 		text = param.getString("ip");
-		netWorkKillPage.searchUtil(netWorkKillPage.getIp(),text);
+		netWorkKillPage.searchUtil(netWorkKillPage.getSearchBar(),
+				netWorkKillPage.getSearchButton(),netWorkKillPage.getIp(),text);
 		Assert.assertEquals(TestUtil.waitForVisbility(netWorkKillPage.getTr()).findElement(By.xpath("./td[3]/div"))
 				.getText(),text,"全网查杀搜索条验证"+text+"错误");
 	}
@@ -35,7 +37,8 @@ public class SearchTest extends SeleniumTestCase {
 	public void searchvlibVer(){
 
 		text = param.getString("vlibVer");
-		netWorkKillPage.searchUtil(netWorkKillPage.getVlibVer(),text);
+		netWorkKillPage.searchUtil(netWorkKillPage.getSearchBar(),
+				netWorkKillPage.getSearchButton(),netWorkKillPage.getVlibVer(),text);
 		Assert.assertEquals(TestUtil.waitForVisbility(netWorkKillPage.getTr()).findElement(By.xpath("./td[7]"))
 				.getText(),text,"全网查杀搜索条验证"+text+"错误");
 	}

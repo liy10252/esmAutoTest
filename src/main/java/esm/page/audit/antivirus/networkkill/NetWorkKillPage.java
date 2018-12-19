@@ -85,20 +85,8 @@ public class NetWorkKillPage extends BasePage {
 	@FindBy(xpath = "//div[@id='tableBox1']//tbody/tr[1]/td[2]//img")
 	private WebElement onLineStatus;
 
-	String webCount;
-
 	public NetWorkKillPage(EventFiringWebDriver driver) {
 		super(driver);
 	}
 
-	public void searchUtil(WebElement element,String text){
-
-		searchBar.clear();
-		searchButton.click();
-		webCount = count.getText();
-		searchBar.sendKeys(text);
-		element.click();
-		searchButton.click();
-		TestUtil.waitForChanges(count,webCount);
-	}
 }

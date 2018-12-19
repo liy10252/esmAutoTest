@@ -16,7 +16,8 @@ public class SearchTest extends SeleniumTestCase {
 
 		hackerAttackPage = new HackerAttackPage(driver);
 		hackerAttackPage.getTimeUnlimited().click();
-		hackerAttackPage.searchUtil(hackerAttackPage.getComputerName(),expect.getString("computer"));
+		hackerAttackPage.searchUtil(hackerAttackPage.getSearchBar(),
+				hackerAttackPage.getSearchButton(),hackerAttackPage.getComputerName(),expect.getString("computer"));
 		Assert.assertEquals(TestUtil.waitForVisbility(hackerAttackPage.getValue())
 				.getText(),expect.getString("computer"),"黑客攻击搜索条验证错误");
 	}
@@ -24,7 +25,8 @@ public class SearchTest extends SeleniumTestCase {
 	@Test(dependsOnMethods = "searchComputer",description = "ip地址搜索验证")
 	public void searchIp(){
 
-		hackerAttackPage.searchUtil(hackerAttackPage.getIp(),expect.getString("ip"));
+		hackerAttackPage.searchUtil(hackerAttackPage.getSearchBar(),
+				hackerAttackPage.getSearchButton(),hackerAttackPage.getIp(),expect.getString("ip"));
 		Assert.assertEquals(hackerAttackPage.getValue().findElement(By.xpath("./following-sibling::td[1]"))
 				.getText(),expect.getString("ip"),"黑客攻击搜索条验证错误");
 	}

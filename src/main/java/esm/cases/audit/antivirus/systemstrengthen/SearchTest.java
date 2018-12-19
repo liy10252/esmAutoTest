@@ -16,7 +16,9 @@ public class SearchTest extends SeleniumTestCase {
 
 		strengThenPage = new SystemStrengThenPage(driver);
 		strengThenPage.getTimeUnlimited().click();
-		strengThenPage.searchUtil(strengThenPage.getComputerName(),expect.getString("computer"));
+		strengThenPage.searchUtil(strengThenPage.getSearchBar(),
+				strengThenPage.getSearchButton(),strengThenPage.getComputerName(),
+				expect.getString("computer"));
 		Assert.assertEquals(TestUtil.waitForVisbility(strengThenPage.getValue())
 				.getText(),expect.getString("computer"),"系统加固搜索条验证错误");
 	}
@@ -24,7 +26,8 @@ public class SearchTest extends SeleniumTestCase {
 	@Test(dependsOnMethods = "searchComputer",description = "ip地址搜索验证")
 	public void searchIp(){
 
-		strengThenPage.searchUtil(strengThenPage.getIp(),expect.getString("ip"));
+		strengThenPage.searchUtil(strengThenPage.getSearchBar(),
+				strengThenPage.getSearchButton(),strengThenPage.getIp(),expect.getString("ip"));
 		Assert.assertEquals(strengThenPage.getValue().findElement(By.xpath("./following-sibling::td[1]"))
 				.getText(),expect.getString("ip"),"系统加固搜索条验证错误");
 	}

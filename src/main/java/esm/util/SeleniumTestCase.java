@@ -101,6 +101,8 @@ public class SeleniumTestCase {
 				FireWallPage fireWallPage = new FireWallPage(driver);
 				if(caseName.contains("hackerattack")){
 					fireWallPage.gotoHackerAttack();
+				}else if(caseName.contains("adfilter")){
+					fireWallPage.gotoAdFilter();
 				}
 
 			}

@@ -71,21 +71,9 @@ public class VirusDetailsPage extends BasePage{
 	@FindBy(xpath = "//div[@id='tableBox2']//td[1]//a//span[@class]")
 	private List<WebElement> clientvalues;
 
-	private String webCount;
 
 	public VirusDetailsPage(EventFiringWebDriver driver) {
 		super(driver);
-	}
-
-	public void searchUtil(WebElement element,String text){
-
-		searchBar.clear();
-		searchButton.click();
-		webCount = count.getText();
-		searchBar.sendKeys(text);
-		element.click();
-		searchButton.click();
-		TestUtil.waitForChanges(count,webCount);
 	}
 
 }

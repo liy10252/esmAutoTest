@@ -28,21 +28,8 @@ public class UnknownPage extends BasePage {
     @FindBy(xpath = "//dd[@id='searchBox']//span[@val='MAC']")
     private WebElement mac;
 
-    String webCount;
-
     public UnknownPage(EventFiringWebDriver driver) {
         super(driver);
-    }
-
-    public void searchUtil(WebElement element,String text){
-
-        searchBar.clear();
-        searchButton.click();
-        webCount = count.getText();
-        searchBar.sendKeys(text);
-        element.click();
-        searchButton.click();
-        TestUtil.waitForChanges(count,webCount);
     }
 
 }

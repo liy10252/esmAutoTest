@@ -15,6 +15,9 @@ public class FireWallPage extends BasePage {
 	@FindBy(id = "__flowHack")
 	private WebElement hackerAttack;
 
+	@FindBy(id = "__flowAd")
+	private WebElement adFilter;
+
 	public FireWallPage(EventFiringWebDriver driver) {
 		super(driver);
 	}
@@ -29,5 +32,11 @@ public class FireWallPage extends BasePage {
 	public void gotoHackerAttack(){
 		hackerAttack.click();
 		log.info("进入黑客攻击模块------");
+	}
+
+	//进入广告过滤模块
+	public void gotoAdFilter(){
+		adFilter.click();
+		log.info("进入广告过滤模块------");
 	}
 }
