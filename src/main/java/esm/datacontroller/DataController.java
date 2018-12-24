@@ -31,7 +31,8 @@ public class DataController {
         clientService.updateClientDay();
         clientService.updateClientWeek();
         clientService.updateClientMonth();
-        clientService.updateClientStatus();
+        clientService.updateClientStatusFor7();
+        clientService.updateClientStatusFor13();
         esmdbSession.commit();
     }
 
@@ -84,6 +85,17 @@ public class DataController {
         ipAccessService.updateTimelastMonth();
         esmlogSession.commit();
     }
+
+    @Test(description = "更新网址访问日志时间")
+    public void updateBrowsing(){
+
+        BrowsingService browsingService = new BrowsingService(esmlogSession);
+        browsingService.updateTimeDay();
+        browsingService.updateTimelastWeek();
+        browsingService.updateTimelastMonth();
+        esmlogSession.commit();
+    }
+
 
 
     @AfterClass

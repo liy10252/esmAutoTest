@@ -38,12 +38,12 @@ public class NoScanTest extends SeleniumTestCase {
 
 	}
 
-	@Test(dependsOnMethods = "lastWeek",description = "未执行扫描验证")
+	@Test(dependsOnMethods = "lastWeek",description = "扫描中验证")
 	public void scanning(){
 
 		netWorkKillPage.singleClickTool(netWorkKillPage.getScanUnlimited(),netWorkKillPage.getScanning());
-		Assert.assertEquals(TestUtil.waitForVisbility(netWorkKillPage.getScanStatus())
-				.getText(), expect.getString("scanning"), "未执行扫描验证错误");
+		TestUtil.waitForVisbilitys(netWorkKillPage.getScanStatuss());
+		Assert.assertTrue(TestUtil.getValueList(netWorkKillPage.getScanStatuss()).contains(expect.getString("scanning")), "扫描中验证错误");
 
 	}
 

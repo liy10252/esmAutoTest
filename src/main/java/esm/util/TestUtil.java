@@ -332,7 +332,9 @@ public class TestUtil {
 	}
 
 	public static void waitForVisbilitys(List<WebElement> list){
-		ExpectedConditions.refreshed(ExpectedConditions.visibilityOfAllElements(list));
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(	ExpectedConditions.refreshed(ExpectedConditions.visibilityOfAllElements(list)));
+
 	}
 
 	public static boolean waitForinvisibility(WebElement element) {

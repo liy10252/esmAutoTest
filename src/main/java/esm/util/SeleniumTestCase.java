@@ -103,6 +103,8 @@ public class SeleniumTestCase {
 					fireWallPage.gotoHackerAttack();
 				}else if(caseName.contains("adfilter")){
 					fireWallPage.gotoAdFilter();
+				}else if(caseName.contains("urlaccess")){
+					fireWallPage.gotoForbidUrl();
 				}
 
 			}

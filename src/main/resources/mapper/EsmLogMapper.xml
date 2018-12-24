@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="esm.model.esmlog">
+
     <!--更新ScanEvent-->
     <update id="updateScanEvent" parameterType="esm.model.esmlog.XAV_ScanEvent">
         update XAV_ScanEvent
@@ -75,6 +76,26 @@
         <trim prefix="set" suffixOverrides="," suffix=" where GUID = #{GUID} ">
             <if test="null != Time">
                 Time=#{Time},
+            </if>
+
+            <if test="null != GUID and '' !=GUID">
+                GUID=#{GUID},
+            </if>
+
+        </trim>
+        ;
+    </update>
+
+    <update id="updateBrowsing" parameterType="esm.model.esmlog.RFW_BrowsingAuditLog">
+        update RFW_BrowsingAuditLog
+
+        <trim prefix="set" suffixOverrides="," suffix=" where GUID = #{GUID} ">
+            <if test="null != Time">
+                Time=#{Time},
+            </if>
+
+            <if test="null == IgnoreTime">
+                IgnoreTime=#{IgnoreTime},
             </if>
 
             <if test="null != GUID and '' !=GUID">

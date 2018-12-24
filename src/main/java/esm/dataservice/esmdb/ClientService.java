@@ -32,10 +32,18 @@ public class ClientService {
     }
 
     //修改指定computer的status
-    public void updateClientStatus(){
+    public void updateClientStatusFor13(){
         Client client = new Client();
         client.setStatus(1);
         client.setComputerName("WIN-DARB1NLQBLO");
+        session.update("updateClient",client);
+    }
+
+    //修改指定computer的status
+    public void updateClientStatusFor7(){
+        Client client = new Client();
+        client.setStatus(1);
+        client.setComputerName("ESMCLIEN-DC447A");
         session.update("updateClient",client);
     }
 

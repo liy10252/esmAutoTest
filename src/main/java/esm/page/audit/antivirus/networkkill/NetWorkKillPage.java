@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
+import java.util.List;
+
 @Data
 public class NetWorkKillPage extends BasePage {
 
@@ -68,6 +70,9 @@ public class NetWorkKillPage extends BasePage {
 
 	@FindBy(xpath = "//div[@id='tableBox1']//tbody/tr[1]/td[2]//span[2]")
 	private WebElement scanStatus;
+
+	@FindBy(xpath = "//div[@id='tableBox1']//tbody/tr/td[2]/a")
+	private List<WebElement> scanStatuss;
 
 	@FindBy(xpath = "//dd[@id='searchOnline']//a[text()='不限']")
 	private WebElement onlineUnlimited;

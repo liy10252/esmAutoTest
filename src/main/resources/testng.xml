@@ -32,6 +32,10 @@
             <class name="esm.cases.audit.firewall.hackerattack.SearchTest"/>
             <class name="esm.cases.audit.firewall.adfilter.TimeFrameTest"/>
             <class name="esm.cases.audit.firewall.adfilter.SearchTest"/>
+            <class name="esm.cases.audit.firewall.urlaccess.TimeFrameTest"/>
+            <class name="esm.cases.audit.firewall.urlaccess.SearchTest"/>
+            <class name="esm.cases.audit.firewall.urlaccess.WebSiteListTest"/>
+            <class name="esm.cases.audit.firewall.urlaccess.ListFunctionTest"/>
         </classes>
 
     </test>

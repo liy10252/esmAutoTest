@@ -18,6 +18,9 @@ public class FireWallPage extends BasePage {
 	@FindBy(id = "__flowAd")
 	private WebElement adFilter;
 
+	@FindBy(id="__forbidUrl")
+	private WebElement forbidUrl;
+
 	public FireWallPage(EventFiringWebDriver driver) {
 		super(driver);
 	}
@@ -38,5 +41,11 @@ public class FireWallPage extends BasePage {
 	public void gotoAdFilter(){
 		adFilter.click();
 		log.info("进入广告过滤模块------");
+	}
+
+	//进入网址访问模块
+	public void gotoForbidUrl(){
+		forbidUrl.click();
+		log.info("进入网址访问模块------");
 	}
 }
